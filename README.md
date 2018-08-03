@@ -1,0 +1,62 @@
+# Contentstack Extensions SDK
+The Extensions SDK allows you to create custom fields and extend the functionality of Contentstack’s content types. Extensions enable users to introduce simpler interface controls, such as color picker, code editor, video selector, and more, or maybe complex micro web applications such as Shopify or Snipkart. Because of their dissociated nature, Extensions can be reused multiple times.
+
+With the Extensions SDK, users will be able to personalize Contentstack app based on your needs. Since both the core components and custom extensions are built on top of the same API, they almost have the same approach (the only difference being that extensions are rendered within an iframe.)
+
+This SDK overview document introduces you to the concept of custom extensions.
+## Getting started
+
+Include the compiled version of the extension client library by adding the following line to your application.
+
+```html
+<script src="https://www.contentstack.com/sdks/contentstack-ui-extensions/dist/latest/ui-extension-sdk.js"></script>
+```
+
+## Extensions examples
+Some of the examples of our field extensions are:
+
+- **[Color Picker](https://github.com/contentstack/extensions/tree/master/color-picker)** - Displays a native color picker polyfill that allows users to select color as input value and saves the color code in the backend
+
+- **[Ace Editor](https://github.com/contentstack/extensions/tree/master/ace-editor)** - Displays a  code editor written in JavaScript, allowing you to edit HTML, PHP, JavaScript and more easily
+
+- **[JSON Editor](https://github.com/contentstack/extensions/tree/master/json-editor)** - Displays a simple editor that lets you view, edit and format JSON code within the field of your content type
+
+- **[Key-value Field](https://github.com/contentstack/extensions/tree/master/key-value-field)** - Lets you add key-value as input value of a field of your content type
+
+- **[Progress Bar](https://github.com/contentstack/extensions/tree/master/progress-bar)** - Allows users to set value of a field by sliding the progress bar to the left or right
+
+- **[Star Ratings](https://github.com/contentstack/extensions/tree/master/ratings)** - Lets you provide rating by choosing number of stars
+
+- **[Brightcove](https://github.com/contentstack/extensions/tree/master/brightcove)** - Lets you fetch and display your Brightcove videos into a field of your content type.
+
+- **[Shopify](https://github.com/contentstack/extensions/tree/master/shopify)** - Lets you load products of your Shopify store into the field of your content type.
+
+- **[Egnyte](https://github.com/contentstack/extensions/tree/master/egnyte)** - Allows you to fetch files of your Egnyte account and display them into a field of your content type.
+
+- **[Ooyala](https://github.com/contentstack/extensions/tree/master/ooyala)** - Lets you fetch and display your Ooyala videos into a field of your content type.
+
+## Using Contentstack styles
+Extensions are rendered within an iframe, you will need to include the ui-extension-sdk.min.css library within your custom extension in order to use any of the styles provided by Contentstack.
+
+Include the CSS file in your extension code as follows:
+
+```html
+<link rel="stylesheet" type="text/css" href="https://www.contentstack.com/sdks/contentstack-ui-extensions/dist/latest/ui-extension-sdk.css">
+```
+
+For more information on styling your extension, refer to our [style guide](https://www.contentstack.com/docs/extensions/style-guide/).
+
+## More information
+- [Extensions SDK API reference](https://github.com/contentstack/ui-extensions-sdk/blob/master/docs/ui-extensions-api-reference.md)
+- [Extensions documentation ](https://www.contentstack.com/docs/guide/extensions
+)
+
+### The MIT License (MIT)
+
+Copyright © 2018 [Contentstack](https://www.contentstack.com/). All Rights Reserved
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

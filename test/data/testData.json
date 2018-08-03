@@ -1,0 +1,171 @@
+{ 
+  "config":{"sample": "config"},
+  "user" : {"name": "test"},
+  "entry":
+  {
+    "title": "Test Product",
+    "vendor": "Nikola",
+    "product_type": "Tie",
+    "tags": [],
+    "locale": "en-us",
+    "uid": "blt6fba6887bead670f",
+    "created_by": "blt63a04454ab1ce3545b41603b",
+    "updated_by": "blt63a04454ab1ce3545b41603b",
+    "created_at": "2018-02-23T06:04:28.256Z",
+    "updated_at": "2018-02-23T06:04:28.256Z",
+    "ACL":
+    {},
+    "_version": 1,
+    "publish_details": []
+  },
+  "stack":
+  {
+    "created_at": "2018-06-19T11:06:00.886Z",
+    "updated_at": "2018-06-29T12:40:17.115Z",
+    "uid": "blt95faa75f2b8bc70a",
+    "name": "Extension Demo",
+    "org_uid": "xxxxxx",
+    "api_key": "xxxxxx",
+    "owner_uid": "xxxxxxx",
+    "enable_presence": true,
+    "settings":
+    {
+      "version": "2017-10-14",
+      "webhook_enabled": true
+    },
+    "SYS_ACL":
+    {
+      "others":
+      {
+        "invite": false,
+        "sub_acl":
+        {
+          "create": false,
+          "read": false,
+          "update": false,
+          "delete": false
+        }
+      },
+      "roles": [
+      {
+        "uid": "blt10c23d04939be479",
+        "invite": true,
+        "sub_acl":
+        {
+          "create": true,
+          "read": true,
+          "update": true,
+          "delete": true
+        }
+      }]
+    }
+  },
+  "content_type":
+  {
+    "created_at": "2018-02-16T11:47:15.297Z",
+    "updated_at": "2018-02-16T11:50:49.957Z",
+    "title": "Product",
+    "uid": "product",
+    "inbuilt_class": false,
+    "schema": [
+    {
+      "display_name": "Title",
+      "uid": "title",
+      "data_type": "text",
+      "mandatory": true,
+      "unique": true,
+      "field_metadata":
+      {
+        "_default": true
+      },
+      "multiple": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Vendor",
+      "uid": "vendor",
+      "field_metadata":
+      {
+        "description": "",
+        "default_value": ""
+      },
+      "format": "",
+      "error_messages":
+      {
+        "format": ""
+      },
+      "multiple": false,
+      "mandatory": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Product Type",
+      "uid": "product_type",
+      "field_metadata":
+      {
+        "description": "",
+        "default_value": ""
+      },
+      "format": "",
+      "error_messages":
+      {
+        "format": ""
+      },
+      "multiple": false,
+      "mandatory": false,
+      "unique": false
+    },
+    {
+      "data_type": "text",
+      "display_name": "Product",
+      "uid": "product",
+      "field_metadata":
+      {
+        "description": "",
+        "default_value": ""
+      },
+      "format": "",
+      "error_messages":
+      {
+        "format": ""
+      },
+      "multiple": false,
+      "mandatory": false,
+      "unique": false
+    }],
+    "last_activity":
+    {},
+    "maintain_revisions": true,
+    "description": "",
+    "options":
+    {
+      "is_page": false,
+      "singleton": false,
+      "title": "title",
+      "sub_title": []
+    }
+  },
+  "uid": "product_type",
+  "value": "testValue",
+  "schema":
+  {
+    "data_type": "text",
+    "display_name": "Product",
+    "uid": "product",
+    "field_metadata":
+    {
+      "description": "",
+      "default_value": ""
+    },
+    "format": "",
+    "error_messages":
+    {
+      "format": ""
+    },
+    "multiple": false,
+    "mandatory": false,
+    "unique": false
+  },
+  "locale": "en-us"
+}
