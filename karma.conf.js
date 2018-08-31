@@ -13,7 +13,7 @@ module.exports = function (config) {
     logLevel: config.LOG_WARN, //config.LOG_DISABLE, config.LOG_ERROR, config.LOG_INFO, config.LOG_DEBUG
     frameworks: ['jasmine'],
     browsers: ['Chrome','Firefox' /*,'PhantomJS','Edge','ChromeCanary','Opera','IE','Safari'*/ ],
-    reporters: ['kjhtml','coverage-istanbul'],
+    reporters: ['kjhtml','coverage-istanbul','mocha'],
     listenAddress: '0.0.0.0',
     hostname: 'localhost',
     port: 9876,
@@ -53,7 +53,7 @@ module.exports = function (config) {
       }
     },
     mochaReporter: {
-      output: 'noFailures' //full, autowatch, minimal
+      output: 'full' //full, autowatch, minimal
     },
     webpack: {
       mode: "development",

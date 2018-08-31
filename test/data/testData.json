@@ -1,11 +1,28 @@
-{ 
-  "config":{"sample": "config"},
-  "user" : {"name": "test"},
+{
+  "config":
+  {
+    "sample": "config"
+  },
+  "user":
+  {
+    "name": "test"
+  },
   "entry":
   {
     "title": "Test Product",
     "vendor": "Nikola",
     "product_type": "Tie",
+    "group":
+    {
+      "group":
+      {
+        "group": [
+        {
+          "single_line": "5"
+        }]
+      }
+    },"group1":
+    {},
     "tags": [],
     "locale": "en-us",
     "uid": "blt6fba6887bead670f",
@@ -133,6 +150,107 @@
       "multiple": false,
       "mandatory": false,
       "unique": false
+    },
+    {
+      "data_type": "group",
+      "display_name": "Group",
+      "field_metadata":
+      {},
+      "schema": [
+      {
+        "data_type": "group",
+        "display_name": "Group",
+        "field_metadata":
+        {},
+        "schema": [
+        {
+          "data_type": "group",
+          "display_name": "Group",
+          "field_metadata":
+          {},
+          "schema": [
+          {
+            "data_type": "text",
+            "display_name": "Single line textbox",
+            "uid": "single_line",
+            "field_metadata":
+            {
+              "description": "",
+              "default_value": ""
+            },
+            "format": "",
+            "error_messages":
+            {
+              "format": ""
+            },
+            "multiple": false,
+            "mandatory": false,
+            "unique": false
+          }],
+          "uid": "group",
+          "multiple": true,
+          "mandatory": false,
+          "unique": false
+        }],
+        "uid": "group",
+        "multiple": false,
+        "mandatory": false,
+        "unique": false
+      }],
+      "uid": "group",
+      "multiple": false,
+      "mandatory": false,
+      "unique": false
+    },{
+      "data_type": "group",
+      "display_name": "Group",
+      "field_metadata":
+      {},
+      "schema": [
+      {
+        "data_type": "group",
+        "display_name": "Group",
+        "field_metadata":
+        {},
+        "schema": [
+        {
+          "data_type": "group",
+          "display_name": "Group",
+          "field_metadata":
+          {},
+          "schema": [
+          {
+            "data_type": "text",
+            "display_name": "Single line textbox",
+            "uid": "single_line",
+            "field_metadata":
+            {
+              "description": "",
+              "default_value": ""
+            },
+            "format": "",
+            "error_messages":
+            {
+              "format": ""
+            },
+            "multiple": false,
+            "mandatory": false,
+            "unique": false
+          }],
+          "uid": "group",
+          "multiple": true,
+          "mandatory": false,
+          "unique": false
+        }],
+        "uid": "group",
+        "multiple": false,
+        "mandatory": false,
+        "unique": false
+      }],
+      "uid": "group1",
+      "multiple": false,
+      "mandatory": false,
+      "unique": false
     }],
     "last_activity":
     {},
@@ -146,26 +264,58 @@
       "sub_title": []
     }
   },
-  "uid": "product_type",
-  "value": "testValue",
+  "uid": "group1.group.group",
   "schema":
   {
-    "data_type": "text",
-    "display_name": "Product",
-    "uid": "product",
-    "field_metadata":
-    {
-      "description": "",
-      "default_value": ""
+      "data_type": "group",
+      "display_name": "Group",
+      "field_metadata":
+      {},
+      "schema": [
+      {
+        "data_type": "group",
+        "display_name": "Group",
+        "field_metadata":
+        {},
+        "schema": [
+        {
+          "data_type": "group",
+          "display_name": "Group",
+          "field_metadata":
+          {},
+          "schema": [
+          {
+            "data_type": "text",
+            "display_name": "Single line textbox",
+            "uid": "single_line",
+            "field_metadata":
+            {
+              "description": "",
+              "default_value": ""
+            },
+            "format": "",
+            "error_messages":
+            {
+              "format": ""
+            },
+            "multiple": false,
+            "mandatory": false,
+            "unique": false
+          }],
+          "uid": "group",
+          "multiple": true,
+          "mandatory": false,
+          "unique": false
+        }],
+        "uid": "group",
+        "multiple": false,
+        "mandatory": false,
+        "unique": false
+      }],
+      "uid": "group1",
+      "multiple": false,
+      "mandatory": false,
+      "unique": false
     },
-    "format": "",
-    "error_messages":
-    {
-      "format": ""
-    },
-    "multiple": false,
-    "mandatory": false,
-    "unique": false
-  },
   "locale": "en-us"
 }

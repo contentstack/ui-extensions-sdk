@@ -23,11 +23,12 @@ describe("Field", () => {
       on: (event, cbf) => {
         setTimeout(() => {
           cbf({ data: testData.entry })
-        }, 300)
+        }, 100)
       }
     }
     spyOn(connection, 'sendToParent').and.callThrough();
     spyOn(emitter, 'on').and.callThrough();
+    testData.self = true;
     field = new Field({ data: testData }, connection, emitter)
   });
 
@@ -38,7 +39,7 @@ describe("Field", () => {
       expect(field.schema).toEqual(testData.schema);
       expect(emitter.on).toHaveBeenCalled();
       done();
-    }, 400);
+    }, 150);
   });
 
   it("getData", () => {
@@ -50,7 +51,7 @@ describe("Field", () => {
       expect(fieldObj.uid).toEqual(testData.uid);
       expect(fieldObj.data_type).toEqual(testData.schema.data_type);
       expect(fieldObj.schema).toEqual(testData.schema);
-      expect(connection.sendToParent).toHaveBeenCalledWith('setData', { data: 'sampleData', uid: field.uid });
+      expect(connection.sendToParent).toHaveBeenCalledWith('setData', { data: 'sampleData', uid: field.uid , self:true});
       done();
     });
   });

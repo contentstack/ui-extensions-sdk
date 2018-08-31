@@ -1,9 +1,13 @@
 # Contentstack Extensions SDK
-The Extensions SDK allows you to create custom fields and extend the functionality of Contentstack’s content types. Extensions enable users to introduce simpler interface controls, such as color picker, code editor, video selector, and more, or maybe complex micro web applications such as Shopify or Snipkart. Because of their dissociated nature, Extensions can be reused multiple times.
 
-With the Extensions SDK, users will be able to personalize Contentstack app based on your needs. Since both the core components and custom extensions are built on top of the same API, they almost have the same approach (the only difference being that extensions are rendered within an iframe.)
+The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields and Custom Widgets. 
+
+**Custom Fields** enable users to introduce simpler interface controls, such as color picker, code editor, video selector, and more, or maybe complex micro web applications such as Shopify or Snipkart. Because of their dissociated nature, custom fields  can be reused multiple times.
+
+**Custom Widgets**, on the other hand, are like micro content-processing apps that help you analyze the entry content and provide recommendations. Some of the useful widgets you can create using this type of extension are text intelligence, SEO recommendations, language translation, Grammar checker and more. 
 
 This SDK overview document introduces you to the concept of custom extensions.
+
 ## Getting started
 
 Include the compiled version of the extension client library by adding the following line to your application.
@@ -34,6 +38,8 @@ Some of the examples of our field extensions are:
 - **[Egnyte](https://github.com/contentstack/extensions/tree/master/egnyte)** - Allows you to fetch files of your Egnyte account and display them into a field of your content type.
 
 - **[Ooyala](https://github.com/contentstack/extensions/tree/master/ooyala)** - Lets you fetch and display your Ooyala videos into a field of your content type.
+
+- [**Text Intelligence**](https://github.com/contentstack/extensions/tree/master/text-intelligence) - This extension (custom widget) uses MonekyLearn APIs to provide helpful recommendations such as content summarizer, keyword extractor, retail classifier, etc.
 
 ## Using Contentstack styles
 Extensions are rendered within an iframe, you will need to include the ui-extension-sdk.min.css library within your custom extension in order to use any of the styles provided by Contentstack.

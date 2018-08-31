@@ -8,7 +8,7 @@ describe("Extension", () => {
   let sendToParent = function (channel) { return Promise.resolve({ data: testData }) };
   let on = function (event, cbf) {
       setTimeout(() => {
-        cbf({ data: testData.entry })
+        cbf({ data: {data:testData.entry, name:"entrySave"} })
       }, 300)
     };
 

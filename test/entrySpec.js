@@ -13,8 +13,8 @@ describe("Entry", function () {
     emitter = {
       on: (event, cbf) => {
         setTimeout(() => {
-          cbf({ data: testData.entry })
-        }, 300)
+          cbf({ data: {data:testData.entry, name:"entrySave"} })
+        }, 50)
       }
     }
     spyOn(emitter, 'on').and.callThrough();
@@ -25,44 +25,75 @@ describe("Entry", function () {
     setTimeout(function () {
       expect(entry.content_type).toEqual(testData.content_type);
       expect(entry.locale).toEqual(testData.entry.locale);
-      expect(emitter.on).toHaveBeenCalled();
+      expect(emitter.on).toHaveBeenCalledWith('entrySave', jasmine.any(Function));
+      expect(emitter.on.calls.count()).toEqual(1);
       done();
-    }, 400);
+    }, 100);
   });
 
   it("getData", function () {
     expect(testData.entry).toEqual(entry.getData());
   });
 
-  it("getField", function () {
-    let uid = 'title'
-    let schema = entry.content_type.schema.find(x => x.uid === uid);
+  it("getField undefined", function () {
+    let uid = 'group1.group'
+    let schema = entry.content_type.schema[5].schema[0]
+    let field = entry.getField(uid);
+
+    expect(field.uid).toEqual(uid);
+    expect(field.data_type).toEqual(schema.data_type);
+    expect(field.schema).toEqual(schema);
+  });
+
+  it("getField multiple group", function () {
+    let uid = 'group.group.group.0.single_line'
+    let schema = entry.content_type.schema[4].schema[0].schema[0].schema[0]
     let field = entry.getField(uid);
     expect(field.uid).toEqual(uid);
     expect(field.data_type).toEqual(schema.data_type);
     expect(field.schema).toEqual(schema);
   });
 
+  it("getField group", function () {
+    let uid = 'group.group.group'
+    let schema = entry.content_type.schema[4].schema[0].schema[0]
+    let field = entry.getField(uid);
+    expect(field.uid).toEqual(uid);
+    expect(field.data_type).toEqual(schema.data_type);
+    expect(field.schema).toEqual(schema);
+  });
+
+  it("getField Invalid Uid Multiple", function () {
+    let uid = 'group.group.group.0'
+    try {
+      entry.getField(uid);
+    } catch(e) {
+      expect(e.message).toEqual("Invalid uid, Field not found");
+    }
+  });
+
+
   it("getField Invalid Uid", function () {
     try {
-     let field = entry.getField('invaliduid');
+     entry.getField('invaliduid');
     } catch(e) {
       expect(e.message).toEqual('Invalid uid, Field not found');
     }
   });
 
-  it("onChange", function (done) {
-    entry.onChange(function () {
-      expect(emitter.on).toHaveBeenCalledTimes(2);
-      done();
-    });
-  });
-
-  it("onChange Callback must be a function", function () {
+  it("onSave Callback must be a function", function () {
     try {
-     entry.onChange();
+     entry.onSave();
     } catch(e) {
       expect(e.message).toEqual('Callback must be a function');
     }
+  });
+
+  it("onSave", function (done) {
+    entry.onSave(function () {
+        expect(emitter.on).toHaveBeenCalledWith('entrySave', jasmine.any(Function));
+        expect(emitter.on).toHaveBeenCalledTimes(2);
+        done();
+    });
   });
 });
