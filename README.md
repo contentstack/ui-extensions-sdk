@@ -4,7 +4,7 @@ The Extensions SDK allows you to extend Contentstack’s UI by helping you creat
 
 **Custom Fields** enable users to introduce simpler interface controls, such as color picker, code editor, video selector, and more, or maybe complex micro web applications such as Shopify or Snipkart. Because of their dissociated nature, custom fields  can be reused multiple times.
 
-**Custom Widgets**, on the other hand, are like micro content-processing apps that help you analyze the entry content and provide recommendations. Some of the useful widgets you can create using this type of extension are text intelligence, SEO recommendations, language translation, Grammar checker and more. 
+**Custom Widgets**, on the other hand, are like micro content-processing apps that help you analyze the entry content and provide recommendations. Some of the useful widgets you can create using this type of extension are text intelligence, SEO recommendations, language translation, grammar checker and more. 
 
 This SDK overview document introduces you to the concept of custom extensions.
 
@@ -17,7 +17,8 @@ Include the compiled version of the extension client library by adding the follo
 ```
 
 ## Extensions examples
-Some of the examples of our field extensions are:
+### Custom Fields
+Some of the examples of custom field extensions are:
 
 - **[Color Picker](https://github.com/contentstack/extensions/tree/master/color-picker)** - Displays a native color picker polyfill that allows users to select color as input value and saves the color code in the backend
 
@@ -31,8 +32,6 @@ Some of the examples of our field extensions are:
 
 - **[Star Ratings](https://github.com/contentstack/extensions/tree/master/ratings)** - Lets you provide rating by choosing number of stars
 
-- **[Marketo Forms](https://github.com/contentstack/extensions/tree/master/marketo-forms)** - Lets you fetch and display the list of your existing Marketo forms into the field of your content type.
-
 - **[Brightcove](https://github.com/contentstack/extensions/tree/master/brightcove)** - Lets you fetch and display your Brightcove videos into a field of your content type.
 
 - **[Shopify](https://github.com/contentstack/extensions/tree/master/shopify)** - Lets you load products of your Shopify store into the field of your content type.
@@ -41,7 +40,12 @@ Some of the examples of our field extensions are:
 
 - **[Ooyala](https://github.com/contentstack/extensions/tree/master/ooyala)** - Lets you fetch and display your Ooyala videos into a field of your content type.
 
-- [**Text Intelligence**](https://github.com/contentstack/extensions/tree/master/text-intelligence) - This extension (custom widget) uses MonekyLearn APIs to provide helpful recommendations such as content summarizer, keyword extractor, retail classifier, etc.
+### Custom Widgets
+Some of the examples of custom widget extensions are:
+
+- [**Text Intelligence**](https://github.com/contentstack/extensions/tree/master/text-intelligence) - Lets you use MonekyLearn APIs to provide helpful recommendations such as content summarizer, keyword extractor, retail classifier, etc.
+
+- [**Google Analytics**](https://github.com/contentstack/extensions/tree/master/google-analytics) - Displays the traffic analysis and statistics of your entry (using Google Analytics data) on the sidebar of the entry.
 
 ## Using Contentstack styles
 Extensions are rendered within an iframe, you will need to include the ui-extension-sdk.min.css library within your custom extension in order to use any of the styles provided by Contentstack.
