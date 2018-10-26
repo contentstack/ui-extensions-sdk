@@ -1,3 +1,4 @@
+
 # Contentstack Extensions SDK
 
 The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields and Custom Widgets. 
@@ -39,6 +40,10 @@ Some of the examples of custom field extensions are:
 - **[Egnyte](https://github.com/contentstack/extensions/tree/master/egnyte)** - Allows you to fetch files of your Egnyte account and display them into a field of your content type.
 
 - **[Ooyala](https://github.com/contentstack/extensions/tree/master/ooyala)** - Lets you fetch and display your Ooyala videos into a field of your content type.
+
+- **[Optimizely](https://github.com/contentstack/extensions/tree/master/optimizely)** - Lets you serve personalized content by allowing you to select the audience for each entry.
+
+- **[External API Lookup](https://github.com/contentstack/extensions/tree/master/external-api-lookup-template)** - Lets you fetch data from an external API and display the data as possible values for the field on an entry page in Contentstack.
 
 ### Custom Widgets
 Some of the examples of custom widget extensions are:
