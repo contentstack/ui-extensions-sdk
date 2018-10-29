@@ -43,6 +43,8 @@ Some of the examples of custom field extensions are:
 
 - **[Optimizely](https://github.com/contentstack/extensions/tree/master/optimizely)** - Lets you serve personalized content by allowing you to select the audience for each entry.
 
+- **[Youtube](https://github.com/contentstack/extensions/tree/master/youtube)** - Lets you fetch and display your Youtube videos into a field of your content type.
+
 - **[External API Lookup](https://github.com/contentstack/extensions/tree/master/external-api-lookup-template)** - Lets you fetch data from an external API and display the data as possible values for the field on an entry page in Contentstack.
 
 ### Custom Widgets
