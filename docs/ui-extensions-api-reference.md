@@ -30,7 +30,7 @@ This is the main entry point for all extension-related code.
 <link href="https://www.contentstack.com/sdks/contentstack-ui-extensions/dist/latest/ui-extension-sdk.css" rel="stylesheet" >
 ```
 ```javascript
-ContentstackUIExtension.init(function (extension) {
+ContentstackUIExtension.init().then(function (extension) {
   var value = extension.field.getData()
   extension.field.setData("New Field Data")
 })
