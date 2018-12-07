@@ -54,7 +54,6 @@ Some of the examples of custom widget extensions are:
 
 - [**Google Analytics**](https://github.com/contentstack/extensions/tree/master/google-analytics) - Displays the traffic analysis and statistics of your entry (using Google Analytics data) on the sidebar of the entry.
 
-- **[IBM Watson](https://github.com/contentstack/extensions/tree/master/ibm-watson)** - Lets you analyze the content of an entry and extract meta-data from the content such as categories, concepts, emotions, entities, keywords, relations, semantic roles, and sentiment.
 - [**Optimizely Experiments**](https://github.com/contentstack/extensions/tree/master/optimizely-experiments) - Lets you retrieve and display Optimizely Experiments and their details in your entry.
 
 ## Using Contentstack styles
