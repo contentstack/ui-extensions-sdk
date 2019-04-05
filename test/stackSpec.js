@@ -44,7 +44,7 @@ describe("Stack", () => {
 
     it("getContentType uid is required", (done) => {
       let setData = stack.getContentType().catch((e) => {
-        expect(e).toEqual("uid is required");
+        expect(e.message).toEqual("uid is required");
         done()
       });
 
@@ -97,7 +97,6 @@ describe("Stack", () => {
   describe("Entry Calls", () => {
 
     it("get entry with uid", (done) => {
-      stack.ContentType()
       const Query = stack.ContentType('blog').Entry("bltasssss")
       Query
       .language("en_us")
@@ -116,16 +115,18 @@ describe("Stack", () => {
         });
     });
 
-    it("get entry with uid, Kindly provide an entry uid", (done) => {
-      stack.ContentType('blog').Entry().fetch().catch(e=> {
-        expect(e).toEqual("Kindly provide an entry uid. e.g. .Entry('bltsomething123')")
+    it("get entry with uid, uid is required", (done) => {
+      try{
+         stack.ContentType('blog').Entry()
+      }catch(e) {
+        expect(e.message).toEqual("uid is required")
         done()
-      })     
+      }
     });
 
     it("get entry with uid, addParam error", (done) => {
       try {
-       stack.ContentType('blog').Entry().addParam()
+       stack.ContentType('blog').Entry('entry_uid').addParam()
       } catch(e) {
         expect(e.message).toEqual("Kindly provide valid parameters.")
         done()
@@ -134,7 +135,16 @@ describe("Stack", () => {
 
     it("get entry with uid, addQuery error", (done) => {
       try {
-       stack.ContentType('blog').Entry().addQuery()
+       stack.ContentType('blog').Entry('entry_uid').addQuery()
+      } catch(e) {
+        expect(e.message).toEqual("First argument should be a String.")
+        done()
+      }
+    });
+
+    it("entries query, addQuery error", (done) => {
+      try {
+       stack.ContentType('blog').Entry.Query().addQuery()
       } catch(e) {
         expect(e.message).toEqual("First argument should be a String.")
         done()
@@ -143,16 +153,26 @@ describe("Stack", () => {
 
     it("get entry with uid, language error.", (done) => {
       try {
-       stack.ContentType('blog').Entry().language()
+       stack.ContentType('blog').Entry('entry_uid').language()
       } catch(e) {
         expect(e.message).toEqual("Argument should be a String.")
         done()
       }
     });
 
+     it("query entries, language error.", (done) => {
+      try {
+       stack.ContentType('blog').Entry.Query().language()
+      } catch(e) {
+        expect(e.message).toEqual("Argument should be a String.")
+        done()
+      }
+    });
+
+
     it("get entry with uid, includeReference error", (done) => {
       try {
-       stack.ContentType('blog').Entry().includeReference(["stack"]).includeReference()
+       stack.ContentType('blog').Entry('entry_uid').includeReference(["stack"]).includeReference()
       } catch(e) {
         expect(e.message).toEqual("Argument should be a String or an Array.")
         done()
@@ -233,15 +253,23 @@ describe("Stack", () => {
     });
 
     it("find entry query", (done) => {
-       const Query = stack.ContentType('newblog').Query();
+       const Query = stack.ContentType('newblog').Entry.Query();
        expect(Query.getQuery()).toEqual({});
        Query
        .query({"l":"c"})
        .tags(["k"])
        .includeCount()
        .addParam("x1","y")
+       .addQuery("zz","aa")
        .equalTo("x2","y")
        .where("x3","y")
+       .language("en_us")
+       .environment("development")
+       .includeReference("r1")
+       .includeReference(["r2"])
+       .includeOwner()
+       .includeSchema()
+       .includeContentType()
        .regex("k1","v",{})
        .search("search")
        .lessThan("k2","v")
@@ -263,13 +291,13 @@ describe("Stack", () => {
        expect(Query.getQuery()).toEqual({"l":"c","x2":"y","x3":"y","k1":{"$regex":"v","$options":{}},"k2":{"$lt":"v"},"k3":{"$lte":"v"},"k4":{"$gt":"v"},"k5":{"$gte":"v"},"k6":{"$ne":"v"},"k7":{"$in":["v"],"$nin":["v"]},"k8":{"$exists":true},"$and":[{}],"$or":[{}]})
        Query.find().then((data) =>{
           expect(data).toEqual({});
-          expect(connection.sendToParent).toHaveBeenCalledWith("stackQuery",{"content_type_uid":"newblog","params":{"query":{"l":"c","x2":"y","x3":"y","k1":{"$regex":"v","$options":{}},"k2":{"$lt":"v"},"k3":{"$lte":"v"},"k4":{"$gt":"v"},"k5":{"$gte":"v"},"k6":{"$ne":"v"},"k7":{"$in":["v"],"$nin":["v"]},"k8":{"$exists":true},"$and":[{}],"$or":[{}]},"tags":["k"],"include_count":true,"x1":"y","typeahead":"search","asc":"k9","desc":"k10","before_uid":"k11","after_uid":"k12","skip":100,"limit":100},"action":"getEntries"});
+          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', Object({ content_type_uid: 'newblog', params: Object({ query: Object({ l: 'c', x2: 'y', x3: 'y', k1: Object({ $regex: 'v', $options: Object({  }) }), k2: Object({ $lt: 'v' }), k3: Object({ $lte: 'v' }), k4: Object({ $gt: 'v' }), k5: Object({ $gte: 'v' }), k6: Object({ $ne: 'v' }), k7: Object({ $in: [ 'v' ], $nin: [ 'v' ] }), k8: Object({ $exists: true }), $and: [ Object({  }) ], $or: [ Object({  }) ] }), tags: [ 'k' ], include_count: true, x1: 'y', zz: 'aa', locale: 'en_us', environment: 'development', include: [ 'r1', 'r2' ], include_owner: true, include_schema: true, include_content_type: true, typeahead: 'search', asc: 'k9', desc: 'k10', before_uid: 'k11', after_uid: 'k12', skip: 100, limit: 100 }), action: 'getEntries' }));
           done()
        });
     });
 
     it("find one entry", (done) => {
-       const Query = stack.ContentType('newblog').Query();
+       const Query = stack.ContentType('newblog').Entry.Query();
        expect(Query.getQuery()).toEqual({});
        Query
        .query({"l":"c"})
@@ -306,9 +334,9 @@ describe("Stack", () => {
 
     it("and query", (done) => {
 
-      const Query = stack.ContentType('newblog').Query();
-      let Query1 = stack.ContentType('blog').Query().where('title', 'Demo')
-      let Query2 = stack.ContentType('blog').Query().lessThan('comments', 10)
+      const Query = stack.ContentType('newblog').Entry.Query();
+      let Query1 = stack.ContentType('blog').Entry.Query().where('title', 'Demo')
+      let Query2 = stack.ContentType('blog').Entry.Query().lessThan('comments', 10)
       Query.and(Query1, Query2)
        expect(Query.getQuery()).toEqual({"$and":[{"title":"Demo"},{"comments":{"$lt":10}}]})
        Query.findOne().then((data) =>{
@@ -321,9 +349,9 @@ describe("Stack", () => {
     });
 
     it("or query", (done) => {
-       const Query = stack.ContentType('newblog').Query();
-       let Query1 = stack.ContentType('blog').Query().where('title', 'Demo')
-      let Query2 = stack.ContentType('blog').Query().lessThan('comments', 10)
+       const Query = stack.ContentType('newblog').Entry.Query();
+       let Query1 = stack.ContentType('blog').Entry.Query().where('title', 'Demo')
+      let Query2 = stack.ContentType('blog').Entry.Query().lessThan('comments', 10)
       Query.or(Query1, Query2)
        expect(Query.getQuery()).toEqual({"$or":[{"title":"Demo"},{"comments":{"$lt":10}}]})
        Query.findOne().then((data) =>{
@@ -334,7 +362,7 @@ describe("Stack", () => {
     });
 
     it("count entries", (done) => {
-       const Query = stack.ContentType('newblog').Query();
+       const Query = stack.ContentType('newblog').Entry.Query();
        expect(Query.getQuery()).toEqual({});
        Query
        .query({"l":"c"})
@@ -371,7 +399,7 @@ describe("Stack", () => {
     });
 
     it("query error cases", (done) => {
-       const Query = stack.ContentType('newblog').Query();
+       const Query = stack.ContentType('newblog').Entry.Query();
        try { 
           Query.query() 
         } catch (e) {
@@ -492,16 +520,34 @@ describe("Stack", () => {
 
     it("find entry query, includeReference error", (done) => {
       try {
-       stack.ContentType('blog').Entry().includeReference(["stack"]).includeReference()
+       stack.ContentType('blog').Entry('entry_uid').includeReference(["stack"]).includeReference()
       } catch(e) {
         expect(e.message).toEqual("Argument should be a String or an Array.")
         done()
       }
     });
 
+    it("query entries, includeReference error", (done) => {
+      try {
+       stack.ContentType('blog').Entry.Query().includeReference(["stack"]).includeReference()
+      } catch(e) {
+        expect(e.message).toEqual("Argument should be a String or an Array.")
+        done()
+      }
+    });
+
+    it("query entries, environment error", (done) => {
+      try {
+       stack.ContentType('blog').Entry.Query().environment()
+      } catch(e) {
+        expect(e.message).toEqual("Argument should be a String.")
+        done()
+      }
+    });
+
     it("query find ajax error", (done) => {
       let newStack = new Stack({ data: testData }, { sendToParent: sendToParentAjaxCallError })
-      newStack.ContentType('blog').Query().find().catch((e) => {
+      newStack.ContentType('blog').Entry.Query().find().catch((e) => {
         expect(e).toEqual("ajax error");
         done()
       });
@@ -513,6 +559,122 @@ describe("Stack", () => {
         expect(e).toEqual("ajax error");
         done()
       });
+    });
+
+    it("getLanguages", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.getLanguages()
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', Object({ content_type_uid: 'blog', uid: 'bltasssss', params: Object({  }), action: 'getEntryLanguages' }));
+          done();
+        });
+    });
+
+
+     it("create an entry", (done) => {
+      const Query = stack.ContentType('blog').Entry      
+      Query.create({sample :"payload"})
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', Object({ payload: Object({ sample: 'payload' }), content_type_uid: 'blog', action: 'createEntry' }));
+          done();
+        });
+    });
+
+    it("unlocalize entry", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.unlocalize('uid')
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith( 'stackQuery', Object({ content_type_uid: 'blog', uid: 'bltasssss', params: Object({ locale: 'uid' }), action: 'unlocalizeEntry' }));
+          done();
+        });
+    });
+
+    it("unlocalize entry invalid parameters", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.unlocalize()
+        .catch((e) => {
+          expect(e.message).toEqual("Kindly provide valid parameters")
+          done();
+        });
+    });
+
+    it("publish entry", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.publish({sample :"payload"})
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith(  'stackQuery', Object({ payload: Object({ sample: 'payload' }), content_type_uid: 'blog', uid: 'bltasssss', params: Object({  }), action: 'publishEntry' }));
+          done();
+        });
+    });
+
+    it("publish entry invalid parameters", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.publish()
+        .catch((e) => {
+          expect(e.message).toEqual('Kindly provide valid parameters')
+          done();
+        });
+    });
+
+     it("unpublish entry", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.unpublish({sample :"payload"})
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith(  'stackQuery', Object({ payload: Object({ sample: 'payload' }), content_type_uid: 'blog', uid: 'bltasssss', params: Object({  }), action: 'unpublishEntry' }));
+          done();
+        });
+    });
+
+    it("unpublish entry invalid parameters", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.unpublish()
+        .catch((e) => {
+          expect(e.message).toEqual('Kindly provide valid parameters')
+          done();
+        });
+    });
+
+     it("set workflow stage for an entry", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.setWorkflowStage({sample :"payload"})
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith(  'stackQuery', Object({ payload: Object({ sample: 'payload' }), content_type_uid: 'blog', uid: 'bltasssss', params: Object({  }), action: 'setWorkflowStageEntry' }));
+          done();
+        });
+    });
+
+    it("set workflow stage invalid parameters", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.setWorkflowStage()
+        .catch((e) => {
+          expect(e.message).toEqual('Kindly provide valid parameters')
+          done();
+        });
+    });
+
+     it("update an entry", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.update({sample :"payload"}, "fr-fr")
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith( 'stackQuery', Object({ payload: Object({ sample: 'payload' }), content_type_uid: 'blog', uid: 'bltasssss', params: Object({ locale: "fr-fr" }), action: 'updateEntry' }) );
+          done();
+        });
+    });
+
+    it("update entry invalid parameters", (done) => {
+      const Query = stack.ContentType('blog').Entry("bltasssss")
+      Query.update()
+        .catch((e) => {
+          expect(e.message).toEqual('Kindly provide valid parameters')
+          done();
+        });
     });
   });
 
@@ -528,7 +690,7 @@ describe("Stack", () => {
 
     it("getEnvironment name is required", (done) => {
       let setData = stack.getEnvironment().catch((e) => {
-        expect(e).toEqual("name is required");
+        expect(e.message).toEqual("name is required");
         done()
       });
 
@@ -583,10 +745,10 @@ describe("Stack", () => {
   describe("Assets Calls", () => {
 
     it("get single asset", (done) => {
-      const Query = stack.Assets("bltasssss").addParam('k','v')
+      const Query = stack.Asset("bltasssss").addParam('kz','zz')
       Query.fetch()
         .then((data) => {
-          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', { uid: 'bltasssss', params: { k: 'v' }, action: 'getAsset' });
+          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', { uid: 'bltasssss', params: { kz: 'zz' }, action: 'getAsset' });
           expect(data).toEqual({});
           done();
         });
@@ -594,15 +756,15 @@ describe("Stack", () => {
 
     // it("get single asset, Kindly provide an asset uid", (done) => {
     //   console.log('1111')
-    //   stack.Assets().fetch().catch(e=> {
-    //     expect(e).toEqual("Kindly provide an asset uid. e.g. .Assets('bltsomething123')")
+    //   stack.Asset().fetch().catch(e=> {
+    //     expect(e).toEqual("Kindly provide an asset uid. e.g. .Asset('bltsomething123')")
     //     done()
     //   })     
     // });
 
-    it("get entry with uid, addParam error", (done) => {
+    it("get asset with uid, addParam error", (done) => {
       try {
-       stack.Assets('blog').addParam()
+       stack.Asset('blog').addParam()
       } catch(e) {
         expect(e.message).toEqual("Kindly provide valid parameters.")
         done()
@@ -611,15 +773,14 @@ describe("Stack", () => {
 
     it("getAssets ajax error", (done) => {
       let newStack = new Stack({ data: testData }, { sendToParent: sendToParentAjaxCallError })
-      newStack.Assets("bltasssss").fetch().catch((e) => {
+      newStack.Asset("bltasssss").fetch().catch((e) => {
         expect(e).toEqual("ajax error");
         done()
       });
     });
 
     it("find assets query", (done) => {
-       stack.Assets()
-       const Query = stack.Query();
+       const Query = stack.Asset.Query();
        expect(Query.getQuery()).toEqual({});
        Query
        .query({"l":"c"})
@@ -655,8 +816,7 @@ describe("Stack", () => {
     });
 
     it("find one asset", (done) => {
-      stack.Assets()
-       const Query = stack.Query();
+       const Query = stack.Asset.Query();
        expect(Query.getQuery()).toEqual({});
        Query
        .query({"l":"c"})
@@ -692,8 +852,7 @@ describe("Stack", () => {
     });
 
     it("count assets", (done) => {
-      stack.Assets()
-       const Query = stack.Query();
+       const Query = stack.Asset.Query();
        expect(Query.getQuery()).toEqual({});
        Query
        .query({"l":"c"})
@@ -727,6 +886,121 @@ describe("Stack", () => {
           done()
        });
     });
+
+     it("getRteAssets", (done) => {
+      const Query = stack.Asset
+      Query.getRteAssets()
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', Object({ action: 'getRteAssets' }));
+          done();
+        });
+    });
+
+    it("getAssetsOfSpecificTypes", (done) => {
+      const Query = stack.Asset
+      Query.getAssetsOfSpecificTypes('image/png')
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', Object({ action: 'getAssetsOfSpecificTypes', asset_type: 'image/png' }));
+          done();
+        });
+    });
+
+    it("getAssetsOfSpecificTypes invalid parameters", (done) => {
+      const Query = stack.Asset
+      Query.getAssetsOfSpecificTypes()
+        .catch((e) => {
+          expect(e.message).toEqual('Kindly provide valid parameters')
+          done();
+        });
+    });
+
+    it("getAssetsOfSpecificTypes error", (done) => {
+      let newStack = new Stack({ data: testData }, { sendToParent: sendToParentAjaxCallError })
+      newStack.Asset.getAssetsOfSpecificTypes('uid').catch((e) => {
+        expect(e).toEqual("ajax error");
+        done()
+      });
+    });
+
+    it("get references of an asset", (done) => {
+      const Query = stack.Asset("bltasssss")
+      Query.getReferences()
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith( 'stackQuery', Object({ uid: 'bltasssss', params: Object({  }), action: 'getAssetReferences' }));
+          done();
+        });
+    });
+
+
+    it("publish asset", (done) => {
+      const Query = stack.Asset("bltasssss")
+      Query.publish({sample :"payload"})
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', Object({ payload: Object({ sample: 'payload' }), uid: 'bltasssss', params: Object({  }), action: 'publishAsset' }));
+          done();
+        });
+    });
+
+    it("publish asset invalid parameters", (done) => {
+      const Query = stack.Asset("bltasssss")
+      Query.publish()
+        .catch((e) => {
+          expect(e.message).toEqual('Kindly provide valid parameters')
+          done();
+        });
+    });
+
+     it("unpublish asset", (done) => {
+      const Query = stack.Asset("bltasssss")
+      Query.unpublish({sample :"payload"})
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith( 'stackQuery', Object({ payload: Object({ sample: 'payload' }), uid: 'bltasssss', params: Object({  }), action: 'unpublishAsset' }));
+          done();
+        });
+    });
+
+    it("unpublish asset invalid parameters", (done) => {
+      const Query = stack.Asset("bltasssss")
+      Query.unpublish()
+        .catch((e) => {
+          expect(e.message).toEqual('Kindly provide valid parameters')
+          done();
+        });
+    });
+
+   it("update an asset", (done) => {
+      const Query = stack.Asset("bltasssss")
+      Query.update({sample :"payload"})
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith( 'stackQuery', Object({ payload: Object({ sample: 'payload' }), uid: 'bltasssss', params: Object({  }), action: 'updateAsset' }));
+          done();
+        });
+    });
+
+    it("update asset invalid parameters", (done) => {
+      const Query = stack.Asset("bltasssss")
+      Query.update()
+        .catch((e) => {
+          expect(e.message).toEqual('Kindly provide valid parameters')
+          done();
+        });
+    });
+
+    it("delete an asset", (done) => {
+      const Query = stack.Asset("bltasssss")
+      Query.delete({sample :"payload"})
+        .then((data) => {
+          expect(data).toEqual({});
+          expect(connection.sendToParent).toHaveBeenCalledWith(  'stackQuery', Object({ uid: 'bltasssss', params: Object({  }), action: 'deleteAsset' }) );
+          done();
+        });
+    });
   });
 
 
@@ -743,7 +1017,7 @@ describe("Stack", () => {
 
     it("getLocale code is required", (done) => {
       let setData = stack.getLocale().catch((e) => {
-        expect(e).toEqual("code is required");
+        expect(e.message).toEqual("code is required");
         done()
       });
 

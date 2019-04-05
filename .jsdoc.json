@@ -1,3 +1,4 @@
+
 {
     "tags": {
         "allowUnknownTags": true,
@@ -8,9 +9,6 @@
         "includePattern": ".js$",
         "excludePattern": "(node_modules/|jsdocs)"
     },
-    "plugins": [
-        "plugins/markdown"
-    ],
     "templates": {
         "cleverLinks": false,
         "monospaceLinks": true
@@ -20,6 +18,7 @@
         "encoding": "utf8",
         "private": true,
         "recurse": true,
-        "template": "./node_modules/minami"
+        "template": "./node_modules/docdash",
+        "sort": false
     }
 }

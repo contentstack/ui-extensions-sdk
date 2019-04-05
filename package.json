@@ -1,11 +1,11 @@
 {
-  "name": "contentstack-ui-extensions-sdk",
-  "version": "1.1.1",
+  "name": "@contentstack/ui-extensions-sdk",
+  "version": "2.0.0",
   "description": "Contentstack Ui Extensions SDK",
   "main": "dist/ui-extension-sdk.js",
   "scripts": {
     "test": "karma start --single-run",
-    "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
+    "generate:docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
     "build": "npx webpack"
   },
   "keywords": [
@@ -13,20 +13,23 @@
     "contentstack-ui-extension-sdk",
     "ui-extension-sdk"
   ],
-  "homepage": "https://github.com/builtio-contentstack/ui-extensions-sdk",
+  "homepage": "https://github.com/contentstack/ui-extensions-sdk",
   "author": "Contentstack <support@contentstack.com> (https://www.contentstack.com/)",
   "bugs": {
-    "url": "https://github.com/builtio-contentstack/ui-extensions-sdk/issues",
+    "url": "https://github.com/contentstack/ui-extensions-sdk/issues",
     "email": "support@contentstack.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/builtio-contentstack/ui-extensions-sdk.git"
+    "url": "https://github.com/contentstack/ui-extensions-sdk.git"
   },
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "6.26.0",
     "babel-eslint": "8.2.3",
     "babel-loader": "7.1.4",
+    "babel-preset-env": "1.7.0",
+    "docdash": "1.0.2",
     "eslint": "4.19.1",
     "eslint-config-airbnb": "16.1.0",
     "eslint-loader": "2.0.0",
@@ -34,23 +37,27 @@
     "inject-loader": "4.0.1",
     "istanbul": "0.4.5",
     "istanbul-instrumenter-loader": "3.0.1",
-    "jasmine": "2.99.0",
+    "jasmine": "3.3.0",
     "jasmine-core": "2.99.0",
     "jsdoc": "3.5.5",
-    "karma": "3.0.0",
+    "jsdoc-to-markdown": "4.0.1",
+    "karma": "4.0.1",
     "karma-chrome-launcher": "2.2.0",
     "karma-coverage": "1.1.2",
     "karma-coverage-istanbul-reporter": "2.0.1",
-    "karma-firefox-launcher": "^1.1.0",
+    "karma-eslint": "2.2.0",
+    "karma-firefox-launcher": "1.1.0",
     "karma-jasmine": "1.1.2",
     "karma-jasmine-html-reporter": "0.2.2",
-    "karma-mocha-reporter": "2.2.5",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "3.0.0",
-    "minami": "1.2.3",
-    "webpack": "4.1.1",
-    "webpack-cli": "2.0.12",
-    "webpack-dev-server": "3.1.11"
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-spec-reporter": "0.0.32",
+    "karma-summary-reporter": "1.5.2",
+    "karma-webpack": "4.0.0-rc.6",
+    "webpack": "4.29.3",
+    "webpack-bundle-analyzer": "3.0.4",
+    "webpack-cli": "3.2.3",
+    "webpack-dev-server": "3.1.11",
+    "webpack-shell-plugin": "0.5.0"
   },
   "dependencies": {
     "post-robot": "8.0.29",

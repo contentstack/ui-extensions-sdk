@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>8/8</span>
       </div>
     </div>
   </div>
@@ -86,37 +86,68 @@
 41
 42
 43
-44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,60 +156,77 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"> import Extension from "./extension.js";
- import postRobot from "post-robot";
- const version = "1.1.1"
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Extension from './extension.js';
+import postRobot from 'post-robot';
 &nbsp;
- postRobot.CONFIG.LOG_LEVEL = 'error';
+const version = '2.0.0';
 &nbsp;
- /**Class to intialize the plugin on Contentstack ui. */
+postRobot.CONFIG.LOG_LEVEL = 'debug';
 &nbsp;
- class ContentstackUIExtension {
+/** Class to initialize the plugin on Contentstack UI. */
+/**
+   * @hideconstructor
+   */
 &nbsp;
-   /**
-    * You need to first include Contentstack UI Extensions SDK and Contentstack UI Stylesheet in you HTML file and then call ContentstackUIExtension.init in the script tag.
+class ContentstackUIExtension {
+  /**
+    * You need to first include Contentstack UI Extensions SDK and
+    * Contentstack UI Stylesheet in you HTML file and then call
+    * ContentstackUIExtension.init in the script tag.
     * @example
     * HTML
-    * &lt;script src="https://sdklink"&gt;&lt;/script&gt;
-    * &lt;link href="https://style sheet link" rel="stylesheet" &gt;
-    * @example
-    * // javascript 
+    * &lt;script src="https://www.contentstack.com/sdks/contentstack-ui-extensions/2.0.0/ui-extension-sdk.js"&gt;&lt;/script&gt;
+    * &lt;link href="https://www.contentstack.com/sdks/contentstack-ui-extensions/2.0.0/ui-extension-sdk.css" rel="stylesheet" &gt;
+    * @example &lt;caption&gt;Custom Filed&lt;/caption&gt;
+    * // javascript
     * ContentstackUIExtension.init().then(function (extension) {
     *     var value = extension.field.getData()
     *     extension.field.setData("New Field Data")
     * })
-    * @return {Extension} An Extension object, will contain all the data recived from the Contentstack UI.
+    * @example &lt;caption&gt;Custom Widget&lt;/caption&gt;
+    * // javascript
+    * ContentstackUIExtension.init().then(function (extension) {
+    *     var entry = extension.entry.getData()
+    * })
+    * @example &lt;caption&gt;Dashboard Widget&lt;/caption&gt;
+    * // javascript
+    * ContentstackUIExtension.init().then(function (extension) {
+    *     var stack = extension.stack;
+    *     var stackData = stack.getData();
+    * })
+    * @return {external:Promise}  A promise object which will be resolved with an instance of the {@link Extension} class which is instantiated using the data received from the Contentstack UI.
     */
-   static init() {
-     if (this._extension)
-       return Promise.resolve(this._extension)
-     return Extension.initialize().then((initializationData) =&gt; {
-       this._extension = new Extension(initializationData)
-       return Promise.resolve(this._extension)
-     }).catch((e) =&gt; Promise.reject(e))
-   }
+  static init() {
+    if (this._extension) { return Promise.resolve(this._extension); }
+    return Extension.initialize().then((initializationData) =&gt; {
+      this._extension = new Extension(initializationData);
+      return Promise.resolve(this._extension);
+    }).catch(e =&gt; Promise.reject(e));
+  }
 &nbsp;
 &nbsp;
-   /**
-    * Version of Contentstack ui extension.
+  /**
+    * Version of Contentstack UI extension.
     * @type {string}
     */
-   static get SDK_VERSION() {
-     return version;
-   }
- }
+  static get SDK_VERSION() {
+    return version;
+  }
+}
 &nbsp;
- export default ContentstackUIExtension;</pre></td></tr>
+export default ContentstackUIExtension;
+&nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Jan 30 2019 16:27:41 GMT+0530 (IST)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Apr 05 2019 15:45:33 GMT+0530 (IST)
 </div>
 </div>
 <script src="../prettify.js"></script>

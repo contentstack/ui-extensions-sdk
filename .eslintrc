@@ -1,7 +1,20 @@
 {
-  parser: "babel-eslint",
-  "rules": {
-  no-underscore-dangle: 0 
-  },
-  "extends": ["airbnb-base"]
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "extends": "airbnb-base/legacy",
+    "parserOptions": {
+        "ecmaVersion": 2016,
+        "sourceType": "module"
+    },
+    "rules": {
+    	"no-underscore-dangle": "off",
+        "no-restricted-globals": "off",
+        "no-use-before-define": ["error", { "functions": true, "classes": false }],
+        "max-len" : ["warn", { "code": 100 , "ignoreComments": true}]
+    },
+     "globals": {
+        "ContentstackUIExtension": false
+    }
 }

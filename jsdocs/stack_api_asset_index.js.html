@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>stack/api/asset/index.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ContentstackUIExtension.html">ContentstackUIExtension</a><ul class='methods'><li data-type='method'><a href="ContentstackUIExtension.html#.init">init</a></li></ul></li><li><a href="Entry.html">Entry</a><ul class='methods'><li data-type='method'><a href="Entry.html#getData">getData</a></li><li data-type='method'><a href="Entry.html#getField">getField</a></li><li data-type='method'><a href="Entry.html#onSave">onSave</a></li></ul></li><li><a href="Extension.html">Extension</a></li><li><a href="Field.html">Field</a><ul class='methods'><li data-type='method'><a href="Field.html#getData">getData</a></li><li data-type='method'><a href="Field.html#setData">setData</a></li><li data-type='method'><a href="Field.html#setFocus">setFocus</a></li></ul></li><li><a href="Query.html">Query</a><ul class='methods'><li data-type='method'><a href="Query.html#addParam">addParam</a></li><li data-type='method'><a href="Query.html#addQuery">addQuery</a></li><li data-type='method'><a href="Query.html#and">and</a></li><li data-type='method'><a href="Query.html#ascending">ascending</a></li><li data-type='method'><a href="Query.html#containedIn">containedIn</a></li><li data-type='method'><a href="Query.html#count">count</a></li><li data-type='method'><a href="Query.html#descending">descending</a></li><li data-type='method'><a href="Query.html#environment">environment</a></li><li data-type='method'><a href="Query.html#equalTo">equalTo</a></li><li data-type='method'><a href="Query.html#except">except</a></li><li data-type='method'><a href="Query.html#exists">exists</a></li><li data-type='method'><a href="Query.html#find">find</a></li><li data-type='method'><a href="Query.html#findOne">findOne</a></li><li data-type='method'><a href="Query.html#getQuery">getQuery</a></li><li data-type='method'><a href="Query.html#greaterThan">greaterThan</a></li><li data-type='method'><a href="Query.html#greaterThanOrEqualTo">greaterThanOrEqualTo</a></li><li data-type='method'><a href="Query.html#includeContentType">includeContentType</a></li><li data-type='method'><a href="Query.html#includeCount">includeCount</a></li><li data-type='method'><a href="Query.html#includeOwner">includeOwner</a></li><li data-type='method'><a href="Query.html#includeReference">includeReference</a></li><li data-type='method'><a href="Query.html#includeSchema">includeSchema</a></li><li data-type='method'><a href="Query.html#language">language</a></li><li data-type='method'><a href="Query.html#limit">limit</a></li><li data-type='method'><a href="Query.html#notContainedIn">notContainedIn</a></li><li data-type='method'><a href="Query.html#notEqualTo">notEqualTo</a></li><li data-type='method'><a href="Query.html#notExists">notExists</a></li><li data-type='method'><a href="Query.html#only">only</a></li><li data-type='method'><a href="Query.html#or">or</a></li><li data-type='method'><a href="Query.html#query">query</a></li><li data-type='method'><a href="Query.html#regex">regex</a></li><li data-type='method'><a href="Query.html#search">search</a></li><li data-type='method'><a href="Query.html#skip">skip</a></li><li data-type='method'><a href="Query.html#tags">tags</a></li></ul></li><li><a href="Stack.html">Stack</a><ul class='methods'><li data-type='method'><a href="Stack.html#getContentType">getContentType</a></li><li data-type='method'><a href="Stack.html#getContentTypes">getContentTypes</a></li><li data-type='method'><a href="Stack.html#getData">getData</a></li><li data-type='method'><a href="Stack.html#getEnvironment">getEnvironment</a></li><li data-type='method'><a href="Stack.html#getEnvironments">getEnvironments</a></li><li data-type='method'><a href="Stack.html#getLocale">getLocale</a></li><li data-type='method'><a href="Stack.html#getLocales">getLocales</a></li></ul></li><li><a href="Stack_Asset.html">Asset</a><ul class='methods'><li data-type='method'><a href="Stack_Asset.html#.getAssetsOfSpecificTypes">getAssetsOfSpecificTypes</a></li><li data-type='method'><a href="Stack_Asset.html#.getRteAssets">getRteAssets</a></li><li data-type='method'><a href="Stack_Asset.html#.Query">Query</a></li><li data-type='method'><a href="Stack_Asset.html#addParam">addParam</a></li><li data-type='method'><a href="Stack_Asset.html#addQuery">addQuery</a></li><li data-type='method'><a href="Stack_Asset.html#delete">delete</a></li><li data-type='method'><a href="Stack_Asset.html#environment">environment</a></li><li data-type='method'><a href="Stack_Asset.html#except">except</a></li><li data-type='method'><a href="Stack_Asset.html#getReferences">getReferences</a></li><li data-type='method'><a href="Stack_Asset.html#only">only</a></li><li data-type='method'><a href="Stack_Asset.html#publish">publish</a></li><li data-type='method'><a href="Stack_Asset.html#unpublish">unpublish</a></li></ul></li><li><a href="Stack_ContentType.html">ContentType</a></li><li><a href="Stack_ContentType_Entry.html">Entry</a><ul class='methods'><li data-type='method'><a href="Stack_ContentType_Entry.html#.create">create</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#.Query">Query</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#addParam">addParam</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#addQuery">addQuery</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#delete">delete</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#environment">environment</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#except">except</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#fetch">fetch</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#getLanguages">getLanguages</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#getReferences">getReferences</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeContentType">includeContentType</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeOwner">includeOwner</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeReference">includeReference</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeSchema">includeSchema</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#language">language</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#only">only</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#publish">publish</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#setWorkflowStage">setWorkflowStage</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#unlocalize">unlocalize</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#unpublish">unpublish</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#update">update</a></li></ul></li><li><a href="Store.html">Store</a><ul class='methods'><li data-type='method'><a href="Store.html#clear">clear</a></li><li data-type='method'><a href="Store.html#get">get</a></li><li data-type='method'><a href="Store.html#getAll">getAll</a></li><li data-type='method'><a href="Store.html#remove">remove</a></li><li data-type='method'><a href="Store.html#set">set</a></li></ul></li><li><a href="Window.html">Window</a><ul class='methods'><li data-type='method'><a href="Window.html#disableAutoResizing">disableAutoResizing</a></li><li data-type='method'><a href="Window.html#enableAutoResizing">enableAutoResizing</a></li><li data-type='method'><a href="Window.html#enableResizing">enableResizing</a></li><li data-type='method'><a href="Window.html#onDashboardResize">onDashboardResize</a></li><li data-type='method'><a href="Window.html#updateHeight">updateHeight</a></li></ul></li></ul><h3>Externals</h3><ul><li><a href="external-localStorage.html">localStorage</a></li><li><a href="external-Promise.html">Promise</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">stack/api/asset/index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import Base from '../base.js';
+import { getReferences, language, environment } from '../../utils.js';
+
+let connection = {};
+
+/**
+ * @summary Creates an instance of `Asset`.
+ * @description An initializer is responsible for creating an Asset object.
+ * @param {String} uid - uid of the asset
+ * @example
+ * let Asset = extension.stack.Asset('bltsomething123');
+ * @returns {Asset}
+ * @ignore
+ */
+function onData(data) {
+  if (typeof (data.data) === 'string') { return Promise.reject(data.data); }
+  return Promise.resolve(data.data);
+}
+
+function onError(error) {
+  return Promise.reject(error);
+}
+
+class Asset extends Base {
+  constructor(uid) {
+    super(uid);
+    this.getReferences = getReferences;
+    this.environment = environment;
+    return this;
+  }
+
+  /**
+   * @function
+   * @name Stack#Asset.Query
+   * @description This static method instantiates the query module for assets. To see the list of methods that can be used for querying assets, refer the {@link Query} module.
+   * @example
+   * let assetQuery = extension.stack.Asset.Query();
+   * assetQuery.where("title": "main.js").limit(10).skip(10).find().then(...).catch(...);
+   * @return {Query}
+   */
+
+
+  static Query() {
+    const entryQuery = super.Query();
+    Object.assign(entryQuery, {
+      language, environment
+    });
+    return entryQuery;
+  }
+
+  static module(plural = false) {
+    return plural ? 'Assets' : 'Asset';
+  }
+
+  static get connection() {
+    return connection;
+  }
+
+  /**
+   * @function
+   * @name Stack#Asset.getRteAssets
+   * @description This static method retrieves comprehensive information on all assets uploaded through the Rich Text Editor field.
+   * @return {external:Promise}
+   */
+
+  static getRteAssets() {
+    return this.connection.sendToParent('stackQuery', { action: 'getRteAssets' }).then(onData).catch(onError);
+  }
+
+  /**
+   * @function
+   * @name Stack#Asset.getAssetsOfSpecificTypes
+   * @description This static method retrieves assets that are either image or video files, based on the request query.
+   * @param  {String} assetType Type of asset to be received for e.g., ‘image/png’
+   * @return {external:Promise}
+   */
+  static getAssetsOfSpecificTypes(assetType) {
+    if (!assetType || typeof assetType !== 'string') {
+      return Promise.reject(new Error('Kindly provide valid parameters'));
+    }
+    return this.connection.sendToParent('stackQuery', { action: 'getAssetsOfSpecificTypes', asset_type: assetType }).then(onData).catch(onError);
+  }
+
+
+  /**
+   * @name Stack#Asset#only
+   * @function
+   * @description This method is used to show the selected fields of the assets in the result set.
+   * @param {String} [key=BASE] - Single field of an asset
+   * @param {Array} values - Array of fields to be shown in the result set
+   * @example
+   * &lt;caption> Only with the field UID &lt;/caption>
+   * extension.stack.Asset('bltsomething123').only('title').fetch();
+   * @example
+   * &lt;caption> Only with the field UID &lt;/caption>
+   * extension.stack.Asset('bltsomething123').only('BASE','title').fetch();
+   * @example
+   * &lt;caption> Only with the field UIDs(array) &lt;/caption>
+   * extension.stack.Asset('bltsomething123').only(['title','description']).fetch();
+   * @returns {Stack#Asset}
+   */
+
+  /**
+   * @name Stack#Asset#except
+   * @function
+   * @description This method is used to hide the selected fields of the assets in result set.
+   * @param {String} [key=BASE] - Single field of an asset
+   * @param {Array} values - Array of fields to be hidden in the result set
+   * @example
+   * &lt;caption> .Except with the field UID &lt;/caption>
+   * extension.stack.Asset('bltsomething123').except('title').fetch();
+   * @example
+   * &lt;caption> .Except with the field UID &lt;/caption>
+   * extension.stack.Asset('bltsomething123').except('BASE','title').fetch();
+   * @example
+   * &lt;caption> .Except with the field UIDs(array) &lt;/caption>
+   * extension.stack.Asset('bltsomething123').except(['title','description']).fetch();
+   * @returns {Stack#Asset}
+   */
+
+  /**
+   * @function
+   * @name Stack#Asset#environment
+   * @description This method is used to set the environment name of which you want to retrieve the data.
+   * @param {String} environment_uid - UID/Name of environment
+   * @example extension.stack.Asset('bltsomething123').environment('development').fetch()
+   * @returns {Stack#Asset}
+   */
+
+
+  /**
+   This method includes a query parameter in your query.
+   @name Stack#Asset#addParam
+   @function
+   @example extension.stack.Asset('uid').addParam('key', 'value').fetch().then().catch();
+   @param {string} key - Key of the parammeter
+   @param {string} value - Value of the parammeter
+   @return {Stack#Asset}
+  */
+
+  /**
+   This method includes a query parameter in your query.
+   @name Stack#Asset#addQuery
+   @function
+   @example extension.stack.Asset('uid').addQuery('key', 'value').fetch().then().catch();
+   @param {string} key - Key of the parammeter
+   @param {string} value - Value of the parammeter
+   @return {Stack#Asset}
+  */
+
+
+  /**
+   This method will fetch the details of the entries and the assets in which the specified asset is referenced.
+   @see {@link
+   https://www.contentstack.com/docs/apis/content-management-api/#get-all-references-of-asset|
+   Asset References}
+   @name Stack#Asset#getReferences
+   @function
+   @example extension.stack.Asset('uid').getReferences().then().catch();
+   @return {external:Promise}
+  */
+
+  /**
+   This method deletes an existing asset.
+   @see {@link
+   https://www.contentstack.com/docs/apis/content-management-api/#delete-an-asset|
+   Delete Asset}
+   @name Stack#Asset#delete
+   @function
+   @example extension.stack.Asset('uid').delete().then().catch();
+   @return {external:Promise}
+   */
+
+
+  /**
+   * @name Stack#Asset#publish
+   * @function
+   * @description This method allows you to publish the asset either immediately or schedule the publish for a later date/time.
+   * @param {object} payload - Payload for the request.
+   * @example extension.stack.Asset('bltsomething123')
+   .publish(
+     {
+        "asset": {
+          "locales": [
+            "en-us"
+          ],
+          "environments": [
+            "development"
+          ]
+        },
+        "version": 1,
+        "scheduled_at": "2019-02-08T18:30:00.000Z"
+      });
+     * @return {external:Promise}
+     */
+  publish(payload) {
+    if (!payload || (typeof payload !== 'object') || (payload instanceof Array)) {
+      return Promise.reject(new Error('Kindly provide valid parameters'));
+    }
+    return this.fetch('publishAsset', payload);
+  }
+
+  /**
+   * @function
+   * @name Stack#Asset#unpublish
+   * @description This method will instantly unpublish the asset, and also give you the provision to automatically unpublish the asset at a later date/time.
+   * @param {object} payload - Payload for the request.
+   * @example extension.stack.Asset('bltsomething123')
+    .unpublish({
+    "asset": {
+      "locales": [
+        "en-us"
+      ],
+      "environments": [
+        "development"
+      ]
+    },
+    "version": 1,
+    "scheduled_at": "2019-02-08T18:30:00.000Z"
+  });
+   * @return {external:Promise}
+   */
+  unpublish(payload) {
+    if (!payload || (typeof payload !== 'object') || (payload instanceof Array)) {
+      return Promise.reject(new Error('Kindly provide valid parameters'));
+    }
+    return this.fetch('unpublishAsset', payload);
+  }
+}
+
+export default (uiConnection) => {
+  connection = uiConnection;
+  return new Proxy(Asset, {
+    apply(Target, thisArg, argumentsList) {
+      return new Target(...argumentsList);
+    }
+  });
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Apr 05 2019 15:45:42 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+
+</body>
+</html>

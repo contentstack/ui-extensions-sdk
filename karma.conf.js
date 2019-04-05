@@ -1,26 +1,28 @@
 const path = require('path')
 module.exports = function (config) {
   config.set({
-    basePath: '',
-    exclude: [],
     files: [
       { pattern: 'lib/*.js', watched: true, served: false, included: false, nocache: false },
       { pattern: 'test/*Spec.js', watched: true, served: true, included: true }
     ],
     autoWatch: true,
-    singleRun: false,
+    singleRun: false,  
     failOnEmptyTestSuite: false,
+    plugins: [
+      require("karma-webpack"), 
+      require('karma-jasmine'), 
+      require('karma-coverage-istanbul-reporter'), 
+      require('karma-jasmine-html-reporter'), 
+      require('karma-sourcemap-loader'), 
+      require('karma-chrome-launcher'), 
+      require('karma-firefox-launcher'),
+      require('karma-summary-reporter')
+    ],
     logLevel: config.LOG_WARN, //config.LOG_DISABLE, config.LOG_ERROR, config.LOG_INFO, config.LOG_DEBUG
     frameworks: ['jasmine'],
     browsers: ['Chrome','Firefox' /*,'PhantomJS','Edge','ChromeCanary','Opera','IE','Safari'*/ ],
-    reporters: ['kjhtml','coverage-istanbul','mocha'],
-    listenAddress: '0.0.0.0',
-    hostname: 'localhost',
-    port: 9876,
+    reporters: ['kjhtml','coverage-istanbul', 'summary'],
     retryLimit: 0,
-    browserDisconnectTimeout: 5000,
-    browserNoActivityTimeout: 10000,
-    captureTimeout: 60000,
     client: {
       captureConsole: false,
       clearContext: false,
@@ -40,32 +42,29 @@ module.exports = function (config) {
       logLevel : 'error'
     },
     coverageIstanbulReporter: {
-      combineBrowserReports: false,
-      reports: ['html'],
+      combineBrowserReports: true,
+      fixWebpackSourcePaths: true,
+      reports: ['html','text-summary'],
       dir: path.join(__dirname, 'coverage'),
-      instrumenterOptions: {
-        istanbul: { noCompact: true }
-      },
       'report-config': {
         html: {
           subdir: 'html'
         }
       }
     },
-    mochaReporter: {
-      output: 'full' //full, autowatch, minimal
+    summaryReporter: {
+       show: 'failed',
+       specLength: 50,
+       overviewColumn: true
     },
     webpack: {
       mode: "development",
-      stats: {
-        modules: false,
-      },
       module: {
         rules: [{
             test: /\.js$/,
             loader: 'babel-loader',
             query: {
-                presets: ['es2015']
+                presets: ['env']
             }
             },{
           test: /\.js$/,

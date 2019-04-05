@@ -1,11 +1,13 @@
 
 # Contentstack Extensions SDK
 
-The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields and Custom Widgets. 
+The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields, Custom Widgets, and Dashboard Widgets. 
 
-**Custom Fields** enable users to introduce simpler interface controls, such as color picker, code editor, video selector, and more, or maybe complex micro web applications such as Shopify or Snipkart. Because of their dissociated nature, custom fields  can be reused multiple times.
+**Custom Fields** enable users to introduce simpler interface controls, such as color picker, code editor, video selector, and more, or maybe complex micro web applications such as Shopify or Snipkart. Because of their dissociated nature, custom fields can be reused multiple times.
 
-**Custom Widgets**, on the other hand, are like micro content-processing apps that help you analyze the entry content and provide recommendations. Some of the useful widgets you can create using this type of extension are text intelligence, SEO recommendations, language translation, grammar checker and more. 
+**Custom Widgets** are like micro content-processing apps that help you analyze the entry content and provide recommendations. Some of the useful widgets you can create using this type of extension are text intelligence, SEO recommendations, language translation, grammar checker and more.
+
+**Dashboard Widgets** let you add powerful widgets to the stack’s dashboard that let users do more from a centralized location. Some examples of this type of extension include personal notes, recently published content, notification centre, and stack usage summary.
 
 This SDK overview document introduces you to the concept of custom extensions.
 
@@ -14,7 +16,7 @@ This SDK overview document introduces you to the concept of custom extensions.
 Include the compiled version of the extension client library by adding the following line to your application.
 
 ```html
-<script src="https://www.contentstack.com/sdks/contentstack-ui-extensions/dist/latest/ui-extension-sdk.js"></script>
+<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.0.0/dist/ui-extension-sdk.js"></script>
 ```
 
 ## Extensions examples
@@ -56,19 +58,24 @@ Some of the examples of custom widget extensions are:
 
 - [**Optimizely Experiments**](https://github.com/contentstack/extensions/tree/master/optimizely-experiments) - Lets you retrieve and display Optimizely Experiments and their details in your entry.
 
+### Dashboard Widgets
+Some of the examples of the dashboard widget extensions are:
+
+- [**Google Analytics**](https://github.com/contentstack/extensions/tree/master/dashboard-widget-google-analytics) - Displays the traffic analysis and statistics of your site on the stack dashboard.
+
 ## Using Contentstack styles
 Extensions are rendered within an iframe, you will need to include the ui-extension-sdk.min.css library within your custom extension in order to use any of the styles provided by Contentstack.
 
 Include the CSS file in your extension code as follows:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://www.contentstack.com/sdks/contentstack-ui-extensions/dist/latest/ui-extension-sdk.css">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.0.0/dist/ui-extension-sdk.css">
 ```
 
 For more information on styling your extension, refer to our [style guide](https://www.contentstack.com/docs/extensions/style-guide/).
 
 ## More information
-- [Extensions SDK API reference](https://github.com/contentstack/ui-extensions-sdk/blob/master/docs/ui-extensions-api-reference.md)
+- [Extensions SDK API reference](https://github.com/contentstack/ui-extensions-sdk/blob/2.0.0/docs/ui-extensions-api-reference.md)
 - [Extensions documentation ](https://www.contentstack.com/docs/guide/extensions
 )
 

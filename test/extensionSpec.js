@@ -8,7 +8,9 @@ describe("Extension", () => {
   let sendToParent = function (channel) { return Promise.resolve({ data: testData }) };
   let on = function (event, cbf) {
       setTimeout(() => {
-        cbf({ data: {data:testData.entry, name:"entrySave"} })
+        cbf({ data: {data:testData.entry, name:"entrySave"} });
+        cbf({ data: { state:'full_width', name:"dashboardResize"} });
+
       }, 300)
     };
 
@@ -20,13 +22,24 @@ describe("Extension", () => {
 
   it("initialize", function (done) {
     newExtension.initialize().then((data) => {
+
+
       let extension = new newExtension(data)
       expect(extension.config).toEqual(testData.config);
       expect(extension.currentUser).toEqual(testData.user);
       expect(extension.type).toEqual('FIELD');
+
       testData.type = 'SIDEBAR'
       extension = new newExtension(data);
       expect(extension.type).toEqual(testData.type);
+      expect(extension.window).toBeUndefined();
+      expect(extension.field).toBeUndefined();
+
+      testData.type = 'DASHBOARD'
+      extension = new newExtension(data);
+      expect(extension.type).toEqual(testData.type);
+      expect(extension.entry).toBeUndefined();
+      expect(extension.field).toBeUndefined();
       done();
     });
   });

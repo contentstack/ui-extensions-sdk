@@ -4,6 +4,8 @@ describe("Window", () => {
   let windowObj
   let connection;
   let sendToParent;
+  let emitter;
+
 
   beforeEach(function () {
 
@@ -11,15 +13,49 @@ describe("Window", () => {
       return Promise.resolve({ data: {} })
     }
 
+    emitter = {
+      on: (event, cbf) => {
+        setTimeout(() => {
+          cbf({ state: 'full_width'})
+        }, 50)
+      }
+    }
+
+    spyOn(emitter, 'on').and.callThrough();
+
     connection = { sendToParent: sendToParent }
     spyOn(connection, 'sendToParent').and.callThrough();
-    windowObj = new Window(connection)
+    windowObj = new Window(connection,'FIELD', emitter)
   });
 
+  it("enableResizing", (done) => {
+    windowObj.type = 'DASHBOARD'
+    windowObj.enableResizing().then(() => {
+      expect(connection.sendToParent).toHaveBeenCalledWith('window', { action: 'enableResizing' }); // since previous height was same
+      done()
+    })
+  });
+
+  it("enableResizing called on field extension", (done) => {
+    windowObj.type = 'Field'
+    windowObj.enableResizing().then(() => {
+      expect(connection.sendToParent).toHaveBeenCalledTimes(0); // since previous height was same
+      done()
+    })
+  });
 
   it("updateHeight with params", (done) => {
     windowObj.updateHeight('55').then(() => {
       expect(connection.sendToParent).toHaveBeenCalledWith('resize', '55');
+      done()
+    })
+  });
+
+  it("updateHeight for dashboard in half width", (done) => {
+    windowObj.type = 'DASHBOARD';
+    windowObj.state = 'half_width';
+    windowObj.updateHeight('55').then(() => {
+      expect(connection.sendToParent).toHaveBeenCalledTimes(0);
       done()
     })
   });
@@ -79,9 +115,35 @@ describe("Window", () => {
     },300)
   });
 
-
-  it("onChange", (done) => {
-    done()
+  it("onDashboardResize Callback must be a function", function () {
+    try {
+      windowObj.type = 'DASHBOARD'
+      windowObj.onDashboardResize();
+    } catch(e) {
+      expect(e.message).toEqual('Callback must be a function');
+    }
   });
+
+  it("onDashboardResize for field extension", function () {
+    windowObj.type = 'FIELD'
+    expect(windowObj.onDashboardResize()).toEqual(false)
+  });
+
+  it("onDashboardResize", function (done) {
+    windowObj.type = 'DASHBOARD'
+    expect(windowObj.state).toEqual('half_width')
+    windowObj.onDashboardResize(function () {
+        expect(emitter.on).toHaveBeenCalledWith('dashboardResize', jasmine.any(Function));
+        expect(emitter.on).toHaveBeenCalledTimes(1);
+        expect(windowObj.state).toEqual('full_width')
+        done();
+    });
+  });
+
+
+
+  // it("onChange", (done) => {
+  //   done()
+  // });
 
 });

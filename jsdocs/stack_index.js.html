@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>stack/index.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ContentstackUIExtension.html">ContentstackUIExtension</a><ul class='methods'><li data-type='method'><a href="ContentstackUIExtension.html#.init">init</a></li></ul></li><li><a href="Entry.html">Entry</a><ul class='methods'><li data-type='method'><a href="Entry.html#getData">getData</a></li><li data-type='method'><a href="Entry.html#getField">getField</a></li><li data-type='method'><a href="Entry.html#onSave">onSave</a></li></ul></li><li><a href="Extension.html">Extension</a></li><li><a href="Field.html">Field</a><ul class='methods'><li data-type='method'><a href="Field.html#getData">getData</a></li><li data-type='method'><a href="Field.html#setData">setData</a></li><li data-type='method'><a href="Field.html#setFocus">setFocus</a></li></ul></li><li><a href="Query.html">Query</a><ul class='methods'><li data-type='method'><a href="Query.html#addParam">addParam</a></li><li data-type='method'><a href="Query.html#addQuery">addQuery</a></li><li data-type='method'><a href="Query.html#and">and</a></li><li data-type='method'><a href="Query.html#ascending">ascending</a></li><li data-type='method'><a href="Query.html#containedIn">containedIn</a></li><li data-type='method'><a href="Query.html#count">count</a></li><li data-type='method'><a href="Query.html#descending">descending</a></li><li data-type='method'><a href="Query.html#environment">environment</a></li><li data-type='method'><a href="Query.html#equalTo">equalTo</a></li><li data-type='method'><a href="Query.html#except">except</a></li><li data-type='method'><a href="Query.html#exists">exists</a></li><li data-type='method'><a href="Query.html#find">find</a></li><li data-type='method'><a href="Query.html#findOne">findOne</a></li><li data-type='method'><a href="Query.html#getQuery">getQuery</a></li><li data-type='method'><a href="Query.html#greaterThan">greaterThan</a></li><li data-type='method'><a href="Query.html#greaterThanOrEqualTo">greaterThanOrEqualTo</a></li><li data-type='method'><a href="Query.html#includeContentType">includeContentType</a></li><li data-type='method'><a href="Query.html#includeCount">includeCount</a></li><li data-type='method'><a href="Query.html#includeOwner">includeOwner</a></li><li data-type='method'><a href="Query.html#includeReference">includeReference</a></li><li data-type='method'><a href="Query.html#includeSchema">includeSchema</a></li><li data-type='method'><a href="Query.html#language">language</a></li><li data-type='method'><a href="Query.html#limit">limit</a></li><li data-type='method'><a href="Query.html#notContainedIn">notContainedIn</a></li><li data-type='method'><a href="Query.html#notEqualTo">notEqualTo</a></li><li data-type='method'><a href="Query.html#notExists">notExists</a></li><li data-type='method'><a href="Query.html#only">only</a></li><li data-type='method'><a href="Query.html#or">or</a></li><li data-type='method'><a href="Query.html#query">query</a></li><li data-type='method'><a href="Query.html#regex">regex</a></li><li data-type='method'><a href="Query.html#search">search</a></li><li data-type='method'><a href="Query.html#skip">skip</a></li><li data-type='method'><a href="Query.html#tags">tags</a></li></ul></li><li><a href="Stack.html">Stack</a><ul class='methods'><li data-type='method'><a href="Stack.html#getContentType">getContentType</a></li><li data-type='method'><a href="Stack.html#getContentTypes">getContentTypes</a></li><li data-type='method'><a href="Stack.html#getData">getData</a></li><li data-type='method'><a href="Stack.html#getEnvironment">getEnvironment</a></li><li data-type='method'><a href="Stack.html#getEnvironments">getEnvironments</a></li><li data-type='method'><a href="Stack.html#getLocale">getLocale</a></li><li data-type='method'><a href="Stack.html#getLocales">getLocales</a></li></ul></li><li><a href="Stack_Asset.html">Asset</a><ul class='methods'><li data-type='method'><a href="Stack_Asset.html#.getAssetsOfSpecificTypes">getAssetsOfSpecificTypes</a></li><li data-type='method'><a href="Stack_Asset.html#.getRteAssets">getRteAssets</a></li><li data-type='method'><a href="Stack_Asset.html#.Query">Query</a></li><li data-type='method'><a href="Stack_Asset.html#addParam">addParam</a></li><li data-type='method'><a href="Stack_Asset.html#addQuery">addQuery</a></li><li data-type='method'><a href="Stack_Asset.html#delete">delete</a></li><li data-type='method'><a href="Stack_Asset.html#environment">environment</a></li><li data-type='method'><a href="Stack_Asset.html#except">except</a></li><li data-type='method'><a href="Stack_Asset.html#getReferences">getReferences</a></li><li data-type='method'><a href="Stack_Asset.html#only">only</a></li><li data-type='method'><a href="Stack_Asset.html#publish">publish</a></li><li data-type='method'><a href="Stack_Asset.html#unpublish">unpublish</a></li></ul></li><li><a href="Stack_ContentType.html">ContentType</a></li><li><a href="Stack_ContentType_Entry.html">Entry</a><ul class='methods'><li data-type='method'><a href="Stack_ContentType_Entry.html#.create">create</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#.Query">Query</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#addParam">addParam</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#addQuery">addQuery</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#delete">delete</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#environment">environment</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#except">except</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#fetch">fetch</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#getLanguages">getLanguages</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#getReferences">getReferences</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeContentType">includeContentType</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeOwner">includeOwner</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeReference">includeReference</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeSchema">includeSchema</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#language">language</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#only">only</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#publish">publish</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#setWorkflowStage">setWorkflowStage</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#unlocalize">unlocalize</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#unpublish">unpublish</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#update">update</a></li></ul></li><li><a href="Store.html">Store</a><ul class='methods'><li data-type='method'><a href="Store.html#clear">clear</a></li><li data-type='method'><a href="Store.html#get">get</a></li><li data-type='method'><a href="Store.html#getAll">getAll</a></li><li data-type='method'><a href="Store.html#remove">remove</a></li><li data-type='method'><a href="Store.html#set">set</a></li></ul></li><li><a href="Window.html">Window</a><ul class='methods'><li data-type='method'><a href="Window.html#disableAutoResizing">disableAutoResizing</a></li><li data-type='method'><a href="Window.html#enableAutoResizing">enableAutoResizing</a></li><li data-type='method'><a href="Window.html#enableResizing">enableResizing</a></li><li data-type='method'><a href="Window.html#onDashboardResize">onDashboardResize</a></li><li data-type='method'><a href="Window.html#updateHeight">updateHeight</a></li></ul></li></ul><h3>Externals</h3><ul><li><a href="external-localStorage.html">localStorage</a></li><li><a href="external-Promise.html">Promise</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">stack/index.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import Asset from './api/asset/index.js';
+import ContentType from './api/content-type/index.js';
+
+function onData(data) {
+  if (typeof (data.data) === 'string') { return Promise.reject(data.data); }
+  return Promise.resolve(data.data);
+}
+
+function onError(error) {
+  return Promise.reject(error);
+}
+
+
+/**
+ * Class representing the current stack in Contentstack UI.
+ */
+
+class Stack {
+  /**
+   * @hideconstructor
+   */
+  constructor(data, connection) {
+    this._connection = connection;
+    this._data = data;
+    /**
+     * @constructor
+     * @hideconstructor
+     * @version 2.0.0
+     * @desc Content type defines the structure or schema of a page or a section of your web or mobile property
+     * @see {@link https://www.contentstack.com/docs/apis/content-management-api/#content-types| ContentType}
+     * @param {string} uid - Uid of contenttype.
+     * @example extension.stack.ContentType('content_type_uid')
+     * */
+    this.ContentType = ContentType(connection);
+    /**
+     * @constructor
+     * @version 2.0.0
+     * @hideconstructor
+     * @desc An initializer is responsible for creating an Asset object.
+     * @see {@link https://www.contentstack.com/docs/apis/content-management-api/#assets| Asset}
+     * @param {string} uid - UID of the asset.
+     * @example extension.stack.Asset('asset_uid')
+     * */
+    this.Asset = Asset(connection);
+  }
+
+
+  /**
+   * This method returns the data of the current stack.
+   * @return {Object} Returns stack data.
+   */
+
+  getData() {
+    return this._data;
+  }
+
+
+  /**
+   * This API allows you to retrieve data of a content type of a stack using the {@link https://www.contentstack.com/docs/apis/content-management-api/#get-a-single-content-type| Content Type API} requests. This method returns a Promise object.
+   * @param {string} uid Uid of the desired content type
+   * @param {Object} params Optional parameters for the GET call
+   * @return {Object} A promise object which will be resolved with content type details.
+   */
+  getContentType(uid, params = {}) {
+    if (!uid) {
+      return Promise.reject(new Error('uid is required'));
+    }
+    const options = { uid, params, action: 'getContentType' };
+    return this._connection.sendToParent('stackQuery', options).then(onData).catch(onError);
+  }
+
+  /**
+   * This API allows you to retrieve data of a content types of a stack using the {@link https://www.contentstack.com/docs/apis/content-management-api/#get-all-content-types| Content Types API} requests. This method returns a Promise object.
+   * @param {Object} query Query for the GET call
+   * @param {Object} params Optional parameters for the GET call
+   * @return {Object} A promise object which will be resolved with details of the content type.
+   */
+  getContentTypes(query = {}, params = {}) {
+    const optionParams = params;
+    optionParams.query = query;
+    const options = { params: optionParams, action: 'getContentTypes' };
+    return this._connection.sendToParent('stackQuery', options).then(onData).catch(onError);
+  }
+
+  /**
+   * This API allows you to retrieve environment details of a stack using the {@link https://www.contentstack.com/docs/apis/content-management-api/#get-a-single-environment| Environment API} requests. This method returns a Promise object.
+   * @param {string} name Name of the desired environment
+   * @param {Object} params Optional parameters for the GET call
+   * @return {Object} A promise object which will be resolved with environment details.
+   */
+  getEnvironment(name, params = {}) {
+    if (!name) {
+      return Promise.reject(new Error('name is required'));
+    }
+    const options = { name, params, action: 'getEnvironment' };
+    return this._connection.sendToParent('stackQuery', options).then(onData).catch(onError);
+  }
+
+  /**
+   * This API allows you to retrieve details of environments of a stack using the {@link https://www.contentstack.com/docs/apis/content-management-api/#get-all-environments| Environments API} requests. This method returns a Promise object.
+   * @param {Object} query Query for the GET call
+   * @param {Object} params Optional parameters for the GET call
+   * @return {Object} A Promise object which will be resolved with details of the environments.
+   */
+  getEnvironments(query = {}, params = {}) {
+    const optionParams = params;
+    optionParams.query = query;
+    const options = { params: optionParams, action: 'getEnvironments' };
+    return this._connection.sendToParent('stackQuery', options).then(onData).catch(onError);
+  }
+
+  /**
+   * This API allows you to retrive a locale of a stack using the {@link https://www.contentstack.com/docs/apis/content-management-api/#get-a-language| Language API} requests. Method returns a Promise object.
+   * @param {string} code Code of the desired locale
+   * @param {Object} params Optional parameters for the GET call
+   * @return {Object} A promise object which will be resolved with locale details.
+   */
+  getLocale(code, params = {}) {
+    if (!code) {
+      return Promise.reject(new Error('code is required'));
+    }
+    const options = { code, params, action: 'getLocale' };
+    return this._connection.sendToParent('stackQuery', options).then(onData).catch(onError);
+  }
+
+  /**
+   * This API allows you to retrive the locales of a stack using the {@link https://www.contentstack.com/docs/apis/content-management-api/#get-all-content-types| Languages API} requests. Method returns a Promise object.
+   * @param {Object} query Query for the GET call
+   * @param {Object} params Optional parameters for the GET call
+   * @return {Object} A Promise object which will be resolved with details of the locales.
+   */
+  getLocales(query = {}, params = {}) {
+    const optionParams = params;
+    optionParams.query = query;
+    const options = { params: optionParams, action: 'getLocales' };
+    return this._connection.sendToParent('stackQuery', options).then(onData).catch(onError);
+  }
+}
+
+export default Stack;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Apr 05 2019 15:45:42 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+
+</body>
+</html>

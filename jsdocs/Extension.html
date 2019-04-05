@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Extension - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="ContentstackUIExtension.html">ContentstackUIExtension</a><ul class='methods'><li data-type='method'><a href="ContentstackUIExtension.html#.init">init</a></li></ul></li><li><a href="Entry.html">Entry</a><ul class='methods'><li data-type='method'><a href="Entry.html#getData">getData</a></li><li data-type='method'><a href="Entry.html#getField">getField</a></li><li data-type='method'><a href="Entry.html#onSave">onSave</a></li></ul></li><li><a href="Extension.html">Extension</a></li><li><a href="Field.html">Field</a><ul class='methods'><li data-type='method'><a href="Field.html#getData">getData</a></li><li data-type='method'><a href="Field.html#setData">setData</a></li><li data-type='method'><a href="Field.html#setFocus">setFocus</a></li></ul></li><li><a href="Query.html">Query</a><ul class='methods'><li data-type='method'><a href="Query.html#addParam">addParam</a></li><li data-type='method'><a href="Query.html#addQuery">addQuery</a></li><li data-type='method'><a href="Query.html#and">and</a></li><li data-type='method'><a href="Query.html#ascending">ascending</a></li><li data-type='method'><a href="Query.html#containedIn">containedIn</a></li><li data-type='method'><a href="Query.html#count">count</a></li><li data-type='method'><a href="Query.html#descending">descending</a></li><li data-type='method'><a href="Query.html#environment">environment</a></li><li data-type='method'><a href="Query.html#equalTo">equalTo</a></li><li data-type='method'><a href="Query.html#except">except</a></li><li data-type='method'><a href="Query.html#exists">exists</a></li><li data-type='method'><a href="Query.html#find">find</a></li><li data-type='method'><a href="Query.html#findOne">findOne</a></li><li data-type='method'><a href="Query.html#getQuery">getQuery</a></li><li data-type='method'><a href="Query.html#greaterThan">greaterThan</a></li><li data-type='method'><a href="Query.html#greaterThanOrEqualTo">greaterThanOrEqualTo</a></li><li data-type='method'><a href="Query.html#includeContentType">includeContentType</a></li><li data-type='method'><a href="Query.html#includeCount">includeCount</a></li><li data-type='method'><a href="Query.html#includeOwner">includeOwner</a></li><li data-type='method'><a href="Query.html#includeReference">includeReference</a></li><li data-type='method'><a href="Query.html#includeSchema">includeSchema</a></li><li data-type='method'><a href="Query.html#language">language</a></li><li data-type='method'><a href="Query.html#limit">limit</a></li><li data-type='method'><a href="Query.html#notContainedIn">notContainedIn</a></li><li data-type='method'><a href="Query.html#notEqualTo">notEqualTo</a></li><li data-type='method'><a href="Query.html#notExists">notExists</a></li><li data-type='method'><a href="Query.html#only">only</a></li><li data-type='method'><a href="Query.html#or">or</a></li><li data-type='method'><a href="Query.html#query">query</a></li><li data-type='method'><a href="Query.html#regex">regex</a></li><li data-type='method'><a href="Query.html#search">search</a></li><li data-type='method'><a href="Query.html#skip">skip</a></li><li data-type='method'><a href="Query.html#tags">tags</a></li></ul></li><li><a href="Stack.html">Stack</a><ul class='methods'><li data-type='method'><a href="Stack.html#getContentType">getContentType</a></li><li data-type='method'><a href="Stack.html#getContentTypes">getContentTypes</a></li><li data-type='method'><a href="Stack.html#getData">getData</a></li><li data-type='method'><a href="Stack.html#getEnvironment">getEnvironment</a></li><li data-type='method'><a href="Stack.html#getEnvironments">getEnvironments</a></li><li data-type='method'><a href="Stack.html#getLocale">getLocale</a></li><li data-type='method'><a href="Stack.html#getLocales">getLocales</a></li></ul></li><li><a href="Stack_Asset.html">Asset</a><ul class='methods'><li data-type='method'><a href="Stack_Asset.html#.getAssetsOfSpecificTypes">getAssetsOfSpecificTypes</a></li><li data-type='method'><a href="Stack_Asset.html#.getRteAssets">getRteAssets</a></li><li data-type='method'><a href="Stack_Asset.html#.Query">Query</a></li><li data-type='method'><a href="Stack_Asset.html#addParam">addParam</a></li><li data-type='method'><a href="Stack_Asset.html#addQuery">addQuery</a></li><li data-type='method'><a href="Stack_Asset.html#delete">delete</a></li><li data-type='method'><a href="Stack_Asset.html#environment">environment</a></li><li data-type='method'><a href="Stack_Asset.html#except">except</a></li><li data-type='method'><a href="Stack_Asset.html#getReferences">getReferences</a></li><li data-type='method'><a href="Stack_Asset.html#only">only</a></li><li data-type='method'><a href="Stack_Asset.html#publish">publish</a></li><li data-type='method'><a href="Stack_Asset.html#unpublish">unpublish</a></li></ul></li><li><a href="Stack_ContentType.html">ContentType</a></li><li><a href="Stack_ContentType_Entry.html">Entry</a><ul class='methods'><li data-type='method'><a href="Stack_ContentType_Entry.html#.create">create</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#.Query">Query</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#addParam">addParam</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#addQuery">addQuery</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#delete">delete</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#environment">environment</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#except">except</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#fetch">fetch</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#getLanguages">getLanguages</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#getReferences">getReferences</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeContentType">includeContentType</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeOwner">includeOwner</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeReference">includeReference</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#includeSchema">includeSchema</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#language">language</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#only">only</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#publish">publish</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#setWorkflowStage">setWorkflowStage</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#unlocalize">unlocalize</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#unpublish">unpublish</a></li><li data-type='method'><a href="Stack_ContentType_Entry.html#update">update</a></li></ul></li><li><a href="Store.html">Store</a><ul class='methods'><li data-type='method'><a href="Store.html#clear">clear</a></li><li data-type='method'><a href="Store.html#get">get</a></li><li data-type='method'><a href="Store.html#getAll">getAll</a></li><li data-type='method'><a href="Store.html#remove">remove</a></li><li data-type='method'><a href="Store.html#set">set</a></li></ul></li><li><a href="Window.html">Window</a><ul class='methods'><li data-type='method'><a href="Window.html#disableAutoResizing">disableAutoResizing</a></li><li data-type='method'><a href="Window.html#enableAutoResizing">enableAutoResizing</a></li><li data-type='method'><a href="Window.html#enableResizing">enableResizing</a></li><li data-type='method'><a href="Window.html#onDashboardResize">onDashboardResize</a></li><li data-type='method'><a href="Window.html#updateHeight">updateHeight</a></li></ul></li></ul><h3>Externals</h3><ul><li><a href="external-localStorage.html">localStorage</a></li><li><a href="external-Promise.html">Promise</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Extension</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        Extension
+        </h2>
+        
+            <div class="class-description">Class representing an extension from Contentstack UI.</div>
+        
+    
+</header>
+
+<article>
+    
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="config"><span class="type-signature"></span>config<span class="type-signature"> :Object</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="extension.js.html">extension.js</a>, <a href="extension.js.html#line26">line 26</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    This method gives you the configuration parameters. Check out our <a href="https://www.contentstack.com/docs/guide/extensions">UI Extension documentation</a> .
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="currentUser"><span class="type-signature"></span>currentUser<span class="type-signature"> :Object</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="extension.js.html">extension.js</a>, <a href="extension.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    This object holds details of the current user.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="entry"><span class="type-signature"></span>entry<span class="type-signature"> :<a href="Entry.html">Entry</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="extension.js.html">extension.js</a>, <a href="extension.js.html#line67">line 67</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    This gives you the entry object which allows you to interact with the current entry. Not available in case of the Dashboard Widget extension.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Entry.html">Entry</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="field"><span class="type-signature"></span>field<span class="type-signature"> :<a href="Field.html">Field</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="extension.js.html">extension.js</a>, <a href="extension.js.html#line52">line 52</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Gives you the extension field object which allows you to interact with the field. Only available for the Custom Field extension.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Field.html">Field</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="fieldConfig"><span class="type-signature"></span>fieldConfig<span class="type-signature"> :Object</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="extension.js.html">extension.js</a>, <a href="extension.js.html#line44">line 44</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    This method gives you the instance configuration parameters set from the content type builder page in the field settings. This is only available for the Custom Field extension.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="stack"><span class="type-signature"></span>stack<span class="type-signature"> :<a href="Stack.html">Stack</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="extension.js.html">extension.js</a>, <a href="extension.js.html#line83">line 83</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    This method returns stack object which allows users to read and manipulate a range of objects in a stack.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Stack.html">Stack</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="store"><span class="type-signature"></span>store<span class="type-signature"> :<a href="Store.html">Store</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="extension.js.html">extension.js</a>, <a href="extension.js.html#line60">line 60</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    Store to persist data for extension.
+Note: Data is stored in the browser <a href="external-localStorage.html"><code>external:localStorage</code></a> and will be lost if the <a href="external-localStorage.html"><code>external:localStorage</code></a> is cleared in the browser.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Store.html">Store</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="type"><span class="type-signature"></span>type<span class="type-signature"> :string</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="extension.js.html">extension.js</a>, <a href="extension.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    type of extension, 'FIELD' || 'WIDGET' || 'DASHBOARD'.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+            
+<h4 class="name" id="window"><span class="type-signature"></span>window<span class="type-signature"> :<a href="Window.html">Window</a></span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="extension.js.html">extension.js</a>, <a href="extension.js.html#line76">line 76</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    The window object provides users with methods that allow them to adjust the size of the iframe that contains the extension. Not available in case of custom widgets.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="Window.html">Window</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Apr 05 2019 15:45:42 GMT+0530 (IST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+
+
+</body>
+</html>
