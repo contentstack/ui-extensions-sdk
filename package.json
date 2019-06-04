@@ -1,6 +1,6 @@
 {
   "name": "@contentstack/ui-extensions-sdk",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields, Custom Widgets, and Dashboard Widgets.",
   "main": "dist/ui-extension-sdk.js",
   "scripts": {
@@ -25,10 +25,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "6.26.0",
+    "@babel/cli": "7.4.4",
     "babel-eslint": "8.2.3",
     "babel-loader": "7.1.4",
     "babel-preset-env": "1.7.0",
+    "braces": "2.3.2",
     "docdash": "1.0.2",
     "eslint": "4.19.1",
     "eslint-config-airbnb": "16.1.0",
@@ -39,8 +40,8 @@
     "istanbul-instrumenter-loader": "3.0.1",
     "jasmine": "3.3.0",
     "jasmine-core": "2.99.0",
-    "jsdoc": "3.5.5",
-    "jsdoc-to-markdown": "4.0.1",
+    "jsdoc": "3.6.2",
+    "jsdoc-to-markdown": "5.0.0",
     "karma": "4.0.1",
     "karma-chrome-launcher": "2.2.0",
     "karma-coverage": "1.1.2",
@@ -54,7 +55,6 @@
     "karma-summary-reporter": "1.5.2",
     "karma-webpack": "4.0.0-rc.6",
     "webpack": "4.29.3",
-    "webpack-bundle-analyzer": "3.0.4",
     "webpack-cli": "3.2.3",
     "webpack-dev-server": "3.1.11",
     "webpack-shell-plugin": "0.5.0"
