@@ -6,7 +6,7 @@ This document describes the API requests that a custom extension can use to comm
 ## Inclusion in your project
 You will need to include the `contentstack-extension-sdk` library in your HTML5 app:
 ```html
-<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.0.1/dist/ui-extension-sdk.js"></script>
+<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.0/dist/ui-extension-sdk.js"></script>
 ```
 
 ## Classes
@@ -75,8 +75,8 @@ ContentstackUIExtension.init in the script tag.
 **Example**  
 ```js
 HTML
-<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.0.1/dist/ui-extension-sdk.js"></script>
-<link href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.0.1/dist/ui-extension-sdk.css" rel="stylesheet" >
+<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.0/dist/ui-extension-sdk.js"></script>
+<link href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.0/dist/ui-extension-sdk.css" rel="stylesheet" >
 ```
 **Example** *(Custom Filed)*  
 ```js
