@@ -110,7 +110,7 @@ describe("Stack", () => {
       .fetch()
         .then((data) => {
           expect(data).toEqual({});
-          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', {"uid":"bltasssss","content_type_uid":"blog","params":{"locale":"en_us","include":["r1","r2"],"key":"value","k":"v","include_schema":true,"include_content_type":true,"include_owner":true},"action":"getEntry"});
+          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', {"uid":"bltasssss","content_type_uid":"blog","params":{"locale":"en_us","include[]":["r1","r2"],"key":"value","k":"v","include_schema":true,"include_content_type":true,"include_owner":true},"action":"getEntry"});
           done();
         });
     });
@@ -291,7 +291,7 @@ describe("Stack", () => {
        expect(Query.getQuery()).toEqual({"l":"c","x2":"y","x3":"y","k1":{"$regex":"v","$options":{}},"k2":{"$lt":"v"},"k3":{"$lte":"v"},"k4":{"$gt":"v"},"k5":{"$gte":"v"},"k6":{"$ne":"v"},"k7":{"$in":["v"],"$nin":["v"]},"k8":{"$exists":true},"$and":[{}],"$or":[{}]})
        Query.find().then((data) =>{
           expect(data).toEqual({});
-          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', Object({ content_type_uid: 'newblog', params: Object({ query: Object({ l: 'c', x2: 'y', x3: 'y', k1: Object({ $regex: 'v', $options: Object({  }) }), k2: Object({ $lt: 'v' }), k3: Object({ $lte: 'v' }), k4: Object({ $gt: 'v' }), k5: Object({ $gte: 'v' }), k6: Object({ $ne: 'v' }), k7: Object({ $in: [ 'v' ], $nin: [ 'v' ] }), k8: Object({ $exists: true }), $and: [ Object({  }) ], $or: [ Object({  }) ] }), tags: [ 'k' ], include_count: true, x1: 'y', zz: 'aa', locale: 'en_us', environment: 'development', include: [ 'r1', 'r2' ], include_owner: true, include_schema: true, include_content_type: true, typeahead: 'search', asc: 'k9', desc: 'k10', before_uid: 'k11', after_uid: 'k12', skip: 100, limit: 100 }), action: 'getEntries' }));
+          expect(connection.sendToParent).toHaveBeenCalledWith('stackQuery', Object({ content_type_uid: 'newblog', params: Object({ query: Object({ l: 'c', x2: 'y', x3: 'y', k1: Object({ $regex: 'v', $options: Object({  }) }), k2: Object({ $lt: 'v' }), k3: Object({ $lte: 'v' }), k4: Object({ $gt: 'v' }), k5: Object({ $gte: 'v' }), k6: Object({ $ne: 'v' }), k7: Object({ $in: [ 'v' ], $nin: [ 'v' ] }), k8: Object({ $exists: true }), $and: [ Object({  }) ], $or: [ Object({  }) ] }), tags: [ 'k' ], include_count: true, x1: 'y', zz: 'aa', locale: 'en_us', environment: 'development', "include[]": [ 'r1', 'r2' ], include_owner: true, include_schema: true, include_content_type: true, typeahead: 'search', asc: 'k9', desc: 'k10', before_uid: 'k11', after_uid: 'k12', skip: 100, limit: 100 }), action: 'getEntries' }));
           done()
        });
     });
