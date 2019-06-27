@@ -185,8 +185,8 @@ Class representing an entry from Contentstack UI. Not available for Dashboard Wi
     * [.content_type](#Entry+content_type) : <code>Object</code>
     * [.locale](#Entry+locale) : <code>string</code>
     * [.getData()](#Entry+getData) ⇒ <code>Object</code>
-    * [.getField(Unique)](#Entry+getField) ⇒ <code>Object</code>
-    * [.onSave(The)](#Entry+onSave)
+    * [.getField(uid)](#Entry+getField) ⇒ <code>Object</code>
+    * [.onSave(callback)](#Entry+onSave)
 
 <a name="Entry+content_type"></a>
 
@@ -209,7 +209,7 @@ Gets data of the current entry.
 **Returns**: <code>Object</code> - Returns entry data.  
 <a name="Entry+getField"></a>
 
-### entry.getField(Unique) ⇒ <code>Object</code>
+### entry.getField(uid) ⇒ <code>Object</code>
 Gets the field object which allows you to interact with the field.
 This object will have all the same methods and properties of extension.field except for field.setData().
 
@@ -218,7 +218,7 @@ This object will have all the same methods and properties of extension.field exc
 
 | Param | Type | Description |
 | --- | --- | --- |
-| Unique | <code>string</code> | ID of the field |
+| uid | <code>string</code> | Unique ID of the field |
 
 **Example**  
 ```js
@@ -229,14 +229,14 @@ var fieldData = field.getData();
 ```
 <a name="Entry+onSave"></a>
 
-### entry.onSave(The)
+### entry.onSave(callback)
 This function executes the callback function every time an entry is saved.
 
 **Kind**: instance method of [<code>Entry</code>](#Entry)  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| The | <code>function</code> | function to be called when an entry is saved. |
+| callback | <code>function</code> | The function to be called when an entry is saved. |
 
 <a name="Field"></a>
 
