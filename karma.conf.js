@@ -16,11 +16,12 @@ module.exports = function (config) {
       require('karma-sourcemap-loader'), 
       require('karma-chrome-launcher'), 
       require('karma-firefox-launcher'),
+      require('karma-safari-applescript-launcher'),
       require('karma-summary-reporter')
     ],
     logLevel: config.LOG_WARN, //config.LOG_DISABLE, config.LOG_ERROR, config.LOG_INFO, config.LOG_DEBUG
     frameworks: ['jasmine'],
-    browsers: ['Chrome','Firefox' /*,'PhantomJS','Edge','ChromeCanary','Opera','IE','Safari'*/ ],
+    browsers: ['Chrome','Firefox','Safari' /*,'PhantomJS','Edge','ChromeCanary','Opera','IE'*/ ],
     reporters: ['kjhtml','coverage-istanbul', 'summary'],
     retryLimit: 0,
     client: {

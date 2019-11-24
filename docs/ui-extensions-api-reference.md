@@ -1,4 +1,5 @@
 
+
 # Contentstack Extensions API Reference
 
 This document describes the API requests that a custom extension can use to communicate with Contentstack.
@@ -6,7 +7,7 @@ This document describes the API requests that a custom extension can use to comm
 ## Inclusion in your project
 You will need to include the `contentstack-extension-sdk` library in your HTML5 app:
 ```html
-<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.0/dist/ui-extension-sdk.js"></script>
+<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.1/dist/ui-extension-sdk.js"></script>
 ```
 
 ## Classes
@@ -75,8 +76,8 @@ ContentstackUIExtension.init in the script tag.
 **Example**  
 ```js
 HTML
-<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.0/dist/ui-extension-sdk.js"></script>
-<link href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.0/dist/ui-extension-sdk.css" rel="stylesheet" >
+<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.1/dist/ui-extension-sdk.js"></script>
+<link href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.1/dist/ui-extension-sdk.css" rel="stylesheet" >
 ```
 **Example** *(Custom Filed)*  
 ```js
@@ -291,6 +292,12 @@ Gets the data of the current field
 
 **Kind**: instance method of [<code>Field</code>](#Field)  
 **Returns**: <code>Object</code> \| <code>string</code> \| <code>number</code> - Returns the field data.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>Object</code> | Options object for get Data method. |
+| options.resolved | <code>boolean</code> | If the resolved parameter is set to true for the File field, then the method will return a resolved asset object along with all the field metadata, e.g. 'field.getData({resolved:true})'. |
+
 <a name="Field+setFocus"></a>
 
 ### field.setFocus() ⇒ <code>Object</code>
