@@ -56,7 +56,7 @@ describe("ContentstackUIExtension", () => {
   });
 
   it("SDK_VERSION", function () {
-    expect(newContentstackUIExtension.SDK_VERSION).toEqual('2.1.1');
+    expect(newContentstackUIExtension.SDK_VERSION).toEqual('2.1.2');
   });
 
 });

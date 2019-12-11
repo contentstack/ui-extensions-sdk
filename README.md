@@ -16,7 +16,7 @@ This SDK overview document introduces you to the concept of custom extensions.
 Include the compiled version of the extension client library by adding the following line to your application.
 
 ```html
-<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.1/dist/ui-extension-sdk.js"></script>
+<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.2/dist/ui-extension-sdk.js"></script>
 ```
 
 ## Extensions examples
@@ -69,13 +69,13 @@ Extensions are rendered within an iframe, you will need to include the ui-extens
 Include the CSS file in your extension code as follows:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.1/dist/ui-extension-sdk.css">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.2/dist/ui-extension-sdk.css">
 ```
 
 For more information on styling your extension, refer to our [style guide](https://www.contentstack.com/docs/extensions/style-guide/).
 
 ## More information
-- [Extensions SDK API reference](https://github.com/contentstack/ui-extensions-sdk/blob/2.1.1/docs/ui-extensions-api-reference.md)
+- [Extensions SDK API reference](https://github.com/contentstack/ui-extensions-sdk/blob/2.1.2/docs/ui-extensions-api-reference.md)
 - [Extensions documentation ](https://www.contentstack.com/docs/guide/extensions
 )
 
