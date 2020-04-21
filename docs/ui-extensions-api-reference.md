@@ -7,7 +7,7 @@ This document describes the API requests that a custom extension can use to comm
 ## Inclusion in your project
 You will need to include the `contentstack-extension-sdk` library in your HTML5 app:
 ```html
-<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.2/dist/ui-extension-sdk.js"></script>
+<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.js"></script>
 ```
 
 ## Classes
@@ -76,8 +76,8 @@ ContentstackUIExtension.init in the script tag.
 **Example**  
 ```js
 HTML
-<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.2/dist/ui-extension-sdk.js"></script>
-<link href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.1.2/dist/ui-extension-sdk.css" rel="stylesheet" >
+<script src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.js"></script>
+<link href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.0/dist/ui-extension-sdk.css" rel="stylesheet" >
 ```
 **Example** *(Custom Filed)*  
 ```js
@@ -188,6 +188,9 @@ Class representing an entry from Contentstack UI. Not available for Dashboard Wi
     * [.getData()](#Entry+getData) ⇒ <code>Object</code>
     * [.getField(uid)](#Entry+getField) ⇒ <code>Object</code>
     * [.onSave(callback)](#Entry+onSave)
+    * [.onChange(callback)](#Entry+onChange)
+    * [.onPublish(callback)](#Entry+onPublish)
+    * [.onUnPublish(callback)](#Entry+onUnPublish)
 
 <a name="Entry+content_type"></a>
 
@@ -212,7 +215,8 @@ Gets data of the current entry.
 
 ### entry.getField(uid) ⇒ <code>Object</code>
 Gets the field object which allows you to interact with the field.
-This object will have all the same methods and properties of extension.field except for field.setData().
+This object will support all the methods and properties that work with extension.field.
+Note: For fields initialized using the getFields function, the setData function currently works only for the following fields: as single_line, multi_line, RTE, markdown, select, number, boolean, date, link, and extension of data type text, number, boolean, and date.
 
 **Kind**: instance method of [<code>Entry</code>](#Entry)  
 **Returns**: <code>Object</code> - Field object  
@@ -239,6 +243,50 @@ This function executes the callback function every time an entry is saved.
 | --- | --- | --- |
 | callback | <code>function</code> | The function to be called when an entry is saved. |
 
+<a name="Entry+onChange"></a>
+
+### entry.onSave(callback)
+This function executes the callback function every time an entry is saved.
+
+**Kind**: instance method of [<code>Entry</code>](#Entry)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callback | <code>function</code> | The function to be called when an entry is saved. |
+
+<a name="Entry+onChange"></a>
+
+### entry.onChange(callback)
+The onChange() function executes the callback function every time an entry has been updated.
+
+**Kind**: instance method of [<code>Entry</code>](#Entry)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callback | <code>function</code> | The function to be called when an entry is updated. |
+
+<a name="Entry+onPublish"></a>
+
+### entry.onPublish(callback)
+The onPublish() function executes the callback function every time an entry has been published with the respective payload.
+
+**Kind**: instance method of [<code>Entry</code>](#Entry)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callback | <code>function</code> | The function to be called when an entry is published. |
+
+<a name="Entry+onUnPublish"></a>
+
+### entry.onUnPublish(callback)
+The onPublish() function executes the callback function every time an entry has been unpublished with the respective payload.
+
+**Kind**: instance method of [<code>Entry</code>](#Entry)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callback | <code>function</code> | The function to be called when an entry is unpublished. |
+
 <a name="Field"></a>
 
 ## Field
@@ -251,8 +299,9 @@ Class representing a field from Contentstack UI. Only available for Custom Field
     * [.data_type](#Field+data_type) : <code>string</code>
     * [.schema](#Field+schema) : <code>Object</code>
     * [.setData(data)](#Field+setData) ⇒ [<code>Promise</code>](#external_Promise)
-    * [.getData()](#Field+getData) ⇒ <code>Object</code> \| <code>string</code> \| <code>number</code>
+    * [.getData(options)](#Field+getData) ⇒ <code>Object</code> \| <code>string</code> \| <code>number</code>
     * [.setFocus()](#Field+setFocus) ⇒ <code>Object</code>
+    * [.onChange(callback)](#Field+onChange)
 
 <a name="Field+uid"></a>
 
@@ -287,7 +336,7 @@ Sets the data for the current field.
 
 <a name="Field+getData"></a>
 
-### field.getData() ⇒ <code>Object</code> \| <code>string</code> \| <code>number</code>
+### field.getData(options) ⇒ <code>Object</code> \| <code>string</code> \| <code>number</code>
 Gets the data of the current field
 
 **Kind**: instance method of [<code>Field</code>](#Field)  
@@ -305,6 +354,17 @@ Sets the focus for a field when an extension is being used. This method shows us
 
 **Kind**: instance method of [<code>Field</code>](#Field)  
 **Returns**: <code>Object</code> - A promise object which is resolved when Contentstack UI returns an acknowledgement of the focused state.  
+<a name="Field+onChange"></a>
+
+### field.onChange(callback)
+The field.onChange() function is called when another extension programmatically changes the data of the current extension field using the field.setData() function. This function is only available for extension fields that support the following data types: text, number, boolean, or date.
+
+**Kind**: instance method of [<code>Field</code>](#Field)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callback | <code>function</code> | The function to be called when an entry is published. |
+
 <a name="Store"></a>
 
 ## Store
@@ -1291,7 +1351,7 @@ This API allows you to retrive the locales of a stack using the [ Languages API]
 Creates an instance of the query
 
 **Kind**: global class  
-**Version**: 2.0.0  
+**Version**: 2.2.0  
 
 * [Query](#Query)
     * [.lessThan](#Query+lessThan) ⇒ [<code>Query</code>](#Query)
