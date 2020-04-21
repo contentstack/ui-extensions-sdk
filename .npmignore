@@ -5,3 +5,6 @@ coverage/
 docs/
 lib/
 test/
+karma.config.js
+webpack-entry.js
+webpack.config.js
