@@ -1,6 +1,6 @@
 .DS_Store
 .git
-jsdoc/*
+jsdocs/*
 coverage/
 docs/
 lib/
