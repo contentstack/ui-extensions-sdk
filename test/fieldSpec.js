@@ -119,5 +119,19 @@ describe("Field", () => {
           expect(fileFieldData.single.value).toEqual(singleFileField.getData({resolved : true}));
           expect(fileFieldData.multiple.value).toEqual(multipleFileField.getData({resolved : true}));
       });
+
+      it("onChange callback", function () {
+         singleFileField.onChange((data) => {
+
+         });
+      });
+
+      it("onChange Callback must be a function", function () {
+        try {
+         singleFileField.onChange();
+        } catch(e) {
+          expect(e.message).toEqual('Callback must be a function');
+        }
+      });
   });
 });
