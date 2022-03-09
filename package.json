@@ -26,7 +26,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "7.8.4",
+    "@babel/cli": "^7.17.6",
     "babel-eslint": "8.2.3",
     "babel-loader": "7.1.4",
     "babel-preset-env": "1.7.0",
@@ -41,7 +41,7 @@
     "istanbul-instrumenter-loader": "3.0.1",
     "jasmine": "3.3.0",
     "jasmine-core": "2.99.0",
-    "jsdoc": "3.6.3",
+    "jsdoc": "^3.6.10",
     "jsdoc-to-markdown": "5.0.0",
     "karma": "5.0.1",
     "karma-chrome-launcher": "2.2.0",

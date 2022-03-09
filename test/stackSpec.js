@@ -187,7 +187,7 @@ describe("Stack", () => {
       entry.fetch()
         .then((data) => {
           expect(data).toEqual({});
-          expect(connection.sendToParent).toHaveBeenCalledWith("stackQuery",{"uid":"xys","content_type_uid":"newblog","params":{"only":{"BASE":["title","title","deatials","sample"]}},"action":"getEntry"});
+          expect(connection.sendToParent).toHaveBeenCalledWith("stackQuery",{"uid":"xys","content_type_uid":"newblog","params":{"only[BASE]":["title","title","deatials","sample"]},"action":"getEntry"});
           done();
         });
       done()
@@ -201,7 +201,7 @@ describe("Stack", () => {
       entry.fetch()
         .then((data) => {
           expect(data).toEqual({});
-          expect(connection.sendToParent).toHaveBeenCalledWith("stackQuery",{"uid":"xys","content_type_uid":"newblog","params":{"except":{"title":[],"BASE":["title","deatials","sample"]}},"action":"getEntry"});
+          expect(connection.sendToParent).toHaveBeenCalledWith("stackQuery",{"uid":"xys","content_type_uid":"newblog","params":{ "except[title]": [], "except[BASE]": [ 'title', 'deatials', 'sample' ] },"action":"getEntry"});
           done();
         });
       done()
