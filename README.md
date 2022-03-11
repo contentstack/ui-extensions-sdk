@@ -58,10 +58,14 @@ Some of the examples of custom widget extensions are:
 
 - [**Optimizely Experiments**](https://github.com/contentstack/extensions/tree/master/optimizely-experiments) - Lets you retrieve and display Optimizely Experiments and their details in your entry.
 
+- [**Developer Tools**](https://github.com/contentstack/extensions/tree/master/developer-tools) - This widget extension provides developers with quick tools (API endpoint, JSON, etc.) to work with an entry or all entries of a content type and do a lot more.
+
 ### Dashboard Widgets
 Some of the examples of the dashboard widget extensions are:
 
 - [**Google Analytics**](https://github.com/contentstack/extensions/tree/master/dashboard-widget-google-analytics) - Displays the traffic analysis and statistics of your site on the stack dashboard.
+
+- [**Content Type Visualizer**](https://github.com/contentstack/extensions/tree/master/content-type-visualizer) - Content Type Visualizer Dashboard Widget offers a graphical representation of all content types, along with their fields, in a particular stack.
 
 ## Using Contentstack styles
 Extensions are rendered within an iframe, you will need to include the ui-extension-sdk.min.css library within your custom extension in order to use any of the styles provided by Contentstack.
