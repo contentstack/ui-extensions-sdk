@@ -1,8 +1,8 @@
-import testData from './data/testData.json';
+import originalTestData from './data/testData.json';
 import Extension from '../lib/extension.js';
 import ExtensionModule from 'inject-loader!../lib/extension.js';
 
-
+let testData = JSON.parse(JSON.stringify(originalTestData))
 describe('Extension', () => {
   let newExtension;
   let sendToParent = function (channel) { return Promise.resolve({ data: testData }); };
