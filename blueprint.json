@@ -1,0 +1,12 @@
+{
+  "input": "./.github/readme/blueprint.md",
+  "headingPrefix": {
+    "1": "",
+    "2": ""
+  },
+  "line": "none",
+  "subresourceIntegrity": {
+    "js": "sha512-XBPFmwBD6sVy3M7/ZM46ANQr6m4i4XS8QX1HqBYTU22teZ5wUsA8a3k9tfQdnI2sTaTlyq3vwlZWQWankJEXYg==",
+    "css": "sha512-YFrH8bTpkhIRTf8jgGmJDWvd56LA9GnRzirfMr/K78ldxsyrfedaMxMCZMC9A9d0LzuVFhkkHWo10HWEoAgjjg=="
+  }
+}
