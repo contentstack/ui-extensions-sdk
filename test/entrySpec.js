@@ -201,7 +201,7 @@ describe('Entry', function () {
     // @ts-ignore
     entry = new Entry({ data: dataWithoutEntry }, connection, emitter);
     expect(() => entry.getField("invaliduid")).toThrowError(
-      'getField cannot fetch data from unsaved entry'
+        "The data is unsaved. Save the data before requesting the field."
     );
   });
 
