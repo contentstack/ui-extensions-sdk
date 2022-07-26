@@ -1,13 +1,15 @@
 {
   "name": "@contentstack/ui-extensions-sdk",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields, Custom Widgets, and Dashboard Widgets.",
   "main": "dist/ui-extension-sdk.js",
   "scripts": {
     "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
     "test-local": "karma start --single-run",
     "generate:docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
-    "build": "npx webpack"
+    "build": "npx webpack",
+    "generate:sri": "node ./subresourceIntegrity.js",
+    "generate:readme": "npm run generate:sri && npx @appnest/readme generate"
   },
   "keywords": [
     "contentstack",
@@ -26,7 +28,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "7.8.4",
+    "@babel/cli": "^7.17.6",
     "babel-eslint": "8.2.3",
     "babel-loader": "7.1.4",
     "babel-preset-env": "1.7.0",
@@ -41,12 +43,13 @@
     "istanbul-instrumenter-loader": "3.0.1",
     "jasmine": "3.3.0",
     "jasmine-core": "2.99.0",
-    "jsdoc": "3.6.3",
-    "jsdoc-to-markdown": "5.0.0",
-    "karma": "5.0.1",
-    "karma-chrome-launcher": "2.2.0",
-    "karma-coverage": "1.1.2",
-    "karma-coverage-istanbul-reporter": "2.0.1",
+    "jsdoc": "^3.6.10",
+    "jsdoc-to-markdown": "^7.1.1",
+    "jsonfile": "^6.1.0",
+    "karma": "^6.3.19",
+    "karma-chrome-launcher": "3.1.1",
+    "karma-coverage": "^2.2.0",
+    "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-eslint": "2.2.0",
     "karma-firefox-launcher": "1.1.0",
     "karma-jasmine": "1.1.2",
@@ -55,12 +58,13 @@
     "karma-sourcemap-loader": "0.3.7",
     "karma-spec-reporter": "0.0.32",
     "karma-summary-reporter": "1.5.2",
-    "karma-webpack": "4.0.0-rc.6",
+    "karma-webpack": "^5.0.0",
     "nyc": "14.1.1",
-    "webpack": "4.29.3",
-    "webpack-cli": "3.2.3",
-    "webpack-dev-server": "3.10.3",
-    "webpack-shell-plugin": "0.5.0"
+    "ssri": "^9.0.0",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-shell-plugin-next": "^2.2.2"
   },
   "dependencies": {
     "post-robot": "8.0.29",

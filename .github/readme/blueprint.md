@@ -1,6 +1,3 @@
-<!-- ⚠️ This README has been generated from the file(s) "./.github/readme/blueprint.md" ⚠️-->
-[](#contentstack-extensions-sdk)
-
 # Contentstack Extensions SDK
 
 The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields, Custom Widgets, and Dashboard Widgets.
@@ -13,23 +10,17 @@ The Extensions SDK allows you to extend Contentstack’s UI by helping you creat
 
 This SDK overview document introduces you to the concept of custom extensions.
 
-
-[](#getting-started)
-
 ## Getting started
 
 Include the compiled version of the extension client library by adding the following line to your application.
 
 ```html
 <script
-    src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.1/dist/ui-extension-sdk.js"
-    integrity="sha512-Zvd/rx8MHdudDeY916W50kakd+G/7Z/L4VvG0A/NBWVtmAlD7FPHcWDHc5a4WpGSXoXDgy2SLLDVrASxM7IpNQ=="
+    src="https://unpkg.com/@contentstack/ui-extensions-sdk@{{pkg.version}}/dist/ui-extension-sdk.js"
+    integrity="{{subresourceIntegrity.js}}"
     crossorigin="anonymous"
 ></script>
 ```
-
-
-[](#extensions-examples)
 
 ## Extensions examples
 
@@ -79,9 +70,6 @@ Some of the examples of the dashboard widget extensions are:
 
 -   [**Google Analytics**](https://github.com/contentstack/extensions/tree/master/dashboard-widget-google-analytics) - Displays the traffic analysis and statistics of your site on the stack dashboard.
 
-
-[](#using-contentstack-styles)
-
 ## Using Contentstack styles
 
 Extensions are rendered within an iframe, you will need to include the ui-extension-sdk.min.css library within your custom extension in order to use any of the styles provided by Contentstack.
@@ -93,24 +81,16 @@ Include the CSS file in your extension code as follows:
     rel="stylesheet"
     type="text/css"
     href="https://unpkg.com/@contentstack/ui-extensions-sdk/dist/ui-extension-sdk.css"
-    integrity="sha512-YFrH8bTpkhIRTf8jgGmJDWvd56LA9GnRzirfMr/K78ldxsyrfedaMxMCZMC9A9d0LzuVFhkkHWo10HWEoAgjjg=="
+    integrity="{{subresourceIntegrity.css}}"
     crossorigin="anonymous"
 />
 ```
 
 For more information on styling your extension, refer to our [style guide](https://www.contentstack.com/docs/extensions/style-guide/).
 
-
-[](#more-information)
-
 ## More information
 
 -   [Extensions SDK API reference](https://github.com/contentstack/ui-extensions-sdk/blob/2.2.0/docs/ui-extensions-api-reference.md)
 -   [Extensions documentation ](https://www.contentstack.com/docs/guide/extensions)
 
-
-[](#license)
-
-## License
-	
-Licensed under [MIT](https://opensource.org/licenses/MIT).
+{{template:license}}
