@@ -1,5 +1,5 @@
 const path = require('path');
-const WebpackShellPlugin = require('webpack-shell-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin-next');
 
 module.exports = {
     entry: {
@@ -28,7 +28,7 @@ module.exports = {
         }, {
             test: /\.js$/,
             loader: 'babel-loader',
-            query: {
+            options: {
                 presets: ['env']
             }
         }]

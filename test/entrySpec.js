@@ -195,6 +195,16 @@ describe('Entry', function () {
     }
   });
 
+  it('getField within Create page', function () {
+    const dataWithoutEntry = JSON.parse(JSON.stringify(testData));
+    dataWithoutEntry.entry = {};
+    // @ts-ignore
+    entry = new Entry({ data: dataWithoutEntry }, connection, emitter);
+    expect(() => entry.getField("invaliduid")).toThrowError(
+        "The data is unsaved. Save the data before requesting the field."
+    );
+  });
+
   it('onUnPublish', function (done) {
     entry.onUnPublish(function () {
       expect(emitter.on).toHaveBeenCalledWith('entryUnPublish', jasmine.any(Function));

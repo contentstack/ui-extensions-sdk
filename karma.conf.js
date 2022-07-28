@@ -64,14 +64,14 @@ module.exports = function (config) {
         rules: [{
             test: /\.js$/,
             loader: 'babel-loader',
-            query: {
+            options: {
                 presets: ['env']
             }
             },{
           test: /\.js$/,
           use: {
             loader: 'istanbul-instrumenter-loader',
-            query: {
+            options: {
               esModules: true
             }
           },

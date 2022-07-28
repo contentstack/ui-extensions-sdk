@@ -2,6 +2,7 @@ import testData from './data/testData.json';
 import ContentstackUIExtension from '../lib/index.js';
 import MainModule from 'inject-loader!../lib/index.js';
 import ExtensionModule from 'inject-loader!../lib/extension.js';
+import pkg from '../package.json';
 
 
 describe('ContentstackUIExtension', () => {
@@ -56,6 +57,6 @@ describe('ContentstackUIExtension', () => {
   });
 
   it('SDK_VERSION', function () {
-    expect(newContentstackUIExtension.SDK_VERSION).toEqual('2.2.0');
+    expect(newContentstackUIExtension.SDK_VERSION).toEqual(pkg.version);
   });
 });
