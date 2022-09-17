@@ -68,6 +68,6 @@
   },
   "dependencies": {
     "post-robot": "8.0.29",
-    "wolfy87-eventemitter": "5.2.4"
+    "wolfy87-eventemitter": "5.2.9"
   }
 }
