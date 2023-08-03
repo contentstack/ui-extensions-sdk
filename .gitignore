@@ -2,3 +2,5 @@ node_modules/*
 jsdoc/*
 out/*
 .DS_Store
+coverage/*
+.vscode
