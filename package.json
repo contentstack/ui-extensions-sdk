@@ -3,11 +3,15 @@
   "version": "2.2.2",
   "description": "The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields, Custom Widgets, and Dashboard Widgets.",
   "main": "dist/ui-extension-sdk.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
     "test-local": "karma start --single-run",
     "generate:docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
     "build": "npx webpack",
+    "prepare": "npm run build",
     "generate:sri": "node ./subresourceIntegrity.js",
     "generate:readme": "npm run generate:sri && npx @appnest/readme generate"
   },
