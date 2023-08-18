@@ -3,3 +3,4 @@ jsdoc/*
 out/*
 .DS_Store
 .vscode
+dist/*
