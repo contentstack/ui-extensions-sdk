@@ -1,68 +1,13 @@
 {
-    "multiple":
-    {
+    "multiple": {
         "self": true,
-        "config":
-        {
+        "config": {
             "sample": "config"
         },
-        "user":
-        {
+        "user": {
             "name": "test"
         },
         "value": [
-        {
-            "uid": "blt78cdb7bdceb00332",
-            "created_at": "2019-05-27T06:25:46.929Z",
-            "updated_at": "2019-05-27T06:25:46.929Z",
-            "created_by": "asssa",
-            "updated_by": "asssa",
-            "content_type": "image/png",
-            "file_size": "49385",
-            "tags": [],
-            "filename": "asdasdasd(1).png",
-            "url": "https://images.contentstack.io/v3/assets/blxxx/blt78cdb7bdceb00332/sadsadsASS/asdasdasd(1).png",
-            "ACL": [],
-            "is_dir": false,
-            "_version": 1,
-            "title": "asdasdasd(1).png"
-        },
-        {
-            "uid": "bltd40e27d1918972a4",
-            "created_at": "2019-05-27T06:22:42.426Z",
-            "updated_at": "2019-05-27T06:22:42.426Z",
-            "created_by": "asssa",
-            "updated_by": "asssa",
-            "content_type": "image/png",
-            "file_size": "21748",
-            "tags": [],
-            "filename": "MVMT_Rallye_Green_Sandstone_3.png",
-            "url": "https://images.contentstack.io/v3/assets/blxxx/bltd40e27d1918972a4/5ceb8232231227de413bab12/MVMT_Rallye_Green_Sandstone_3.png",
-            "ACL": [],
-            "is_dir": false,
-            "_version": 1,
-            "title": "MVMT_Rallye_Green_Sandstone_3.png"
-        },
-        {
-            "uid": "blt236db5d7d0d2c2d1",
-            "created_at": "2019-05-27T06:22:39.763Z",
-            "updated_at": "2019-05-27T06:22:39.763Z",
-            "created_by": "asssa",
-            "updated_by": "asssa",
-            "content_type": "image/png",
-            "file_size": "23804",
-            "tags": [],
-            "filename": "MVMT_Rallye_Green_Sandstone_2.png",
-            "url": "https://images.contentstack.io/v3/assets/blxxx/blt236db5d7d0d2c2d1/5ceb822f065d29344df9fd2d/MVMT_Rallye_Green_Sandstone_2.png",
-            "ACL": [],
-            "is_dir": false,
-            "_version": 1,
-            "title": "MVMT_Rallye_Green_Sandstone_2.png"
-        }],
-        "entry":
-        {
-            "title": "Test Product",
-            "file": [
             {
                 "uid": "blt78cdb7bdceb00332",
                 "created_at": "2019-05-27T06:25:46.929Z",
@@ -110,7 +55,60 @@
                 "is_dir": false,
                 "_version": 1,
                 "title": "MVMT_Rallye_Green_Sandstone_2.png"
-            }],
+            }
+        ],
+        "entry": {
+            "title": "Test Product",
+            "file": [
+                {
+                    "uid": "blt78cdb7bdceb00332",
+                    "created_at": "2019-05-27T06:25:46.929Z",
+                    "updated_at": "2019-05-27T06:25:46.929Z",
+                    "created_by": "asssa",
+                    "updated_by": "asssa",
+                    "content_type": "image/png",
+                    "file_size": "49385",
+                    "tags": [],
+                    "filename": "asdasdasd(1).png",
+                    "url": "https://images.contentstack.io/v3/assets/blxxx/blt78cdb7bdceb00332/sadsadsASS/asdasdasd(1).png",
+                    "ACL": [],
+                    "is_dir": false,
+                    "_version": 1,
+                    "title": "asdasdasd(1).png"
+                },
+                {
+                    "uid": "bltd40e27d1918972a4",
+                    "created_at": "2019-05-27T06:22:42.426Z",
+                    "updated_at": "2019-05-27T06:22:42.426Z",
+                    "created_by": "asssa",
+                    "updated_by": "asssa",
+                    "content_type": "image/png",
+                    "file_size": "21748",
+                    "tags": [],
+                    "filename": "MVMT_Rallye_Green_Sandstone_3.png",
+                    "url": "https://images.contentstack.io/v3/assets/blxxx/bltd40e27d1918972a4/5ceb8232231227de413bab12/MVMT_Rallye_Green_Sandstone_3.png",
+                    "ACL": [],
+                    "is_dir": false,
+                    "_version": 1,
+                    "title": "MVMT_Rallye_Green_Sandstone_3.png"
+                },
+                {
+                    "uid": "blt236db5d7d0d2c2d1",
+                    "created_at": "2019-05-27T06:22:39.763Z",
+                    "updated_at": "2019-05-27T06:22:39.763Z",
+                    "created_by": "asssa",
+                    "updated_by": "asssa",
+                    "content_type": "image/png",
+                    "file_size": "23804",
+                    "tags": [],
+                    "filename": "MVMT_Rallye_Green_Sandstone_2.png",
+                    "url": "https://images.contentstack.io/v3/assets/blxxx/blt236db5d7d0d2c2d1/5ceb822f065d29344df9fd2d/MVMT_Rallye_Green_Sandstone_2.png",
+                    "ACL": [],
+                    "is_dir": false,
+                    "_version": 1,
+                    "title": "MVMT_Rallye_Green_Sandstone_2.png"
+                }
+            ],
             "tags": [],
             "locale": "en-us",
             "uid": "blt6fba6887bead670f",
@@ -118,13 +116,11 @@
             "updated_by": "blt63a04454ab1ce3545b41603b",
             "created_at": "2018-02-23T06:04:28.256Z",
             "updated_at": "2018-02-23T06:04:28.256Z",
-            "ACL":
-            {},
+            "ACL": {},
             "_version": 1,
             "publish_details": []
         },
-        "stack":
-        {
+        "stack": {
             "created_at": "2018-06-19T11:06:00.886Z",
             "updated_at": "2018-06-29T12:40:17.115Z",
             "uid": "blt95faa75f2b8bc70a",
@@ -133,18 +129,14 @@
             "api_key": "xxxxxx",
             "owner_uid": "xxxxxxx",
             "enable_presence": true,
-            "settings":
-            {
+            "settings": {
                 "version": "2017-10-14",
                 "webhook_enabled": true
             },
-            "SYS_ACL":
-            {
-                "others":
-                {
+            "SYS_ACL": {
+                "others": {
                     "invite": false,
-                    "sub_acl":
-                    {
+                    "sub_acl": {
                         "create": false,
                         "read": false,
                         "update": false,
@@ -152,59 +144,57 @@
                     }
                 },
                 "roles": [
-                {
-                    "uid": "blt10c23d04939be479",
-                    "invite": true,
-                    "sub_acl":
                     {
-                        "create": true,
-                        "read": true,
-                        "update": true,
-                        "delete": true
+                        "uid": "blt10c23d04939be479",
+                        "invite": true,
+                        "sub_acl": {
+                            "create": true,
+                            "read": true,
+                            "update": true,
+                            "delete": true
+                        }
                     }
-                }]
+                ]
             }
         },
-        "content_type":
-        {
+        "content_type": {
             "created_at": "2018-02-16T11:47:15.297Z",
             "updated_at": "2018-02-16T11:50:49.957Z",
             "title": "Product",
             "uid": "product",
             "inbuilt_class": false,
             "schema": [
-            {
-                "display_name": "Title",
-                "uid": "title",
-                "data_type": "text",
-                "mandatory": true,
-                "unique": true,
-                "field_metadata":
                 {
-                    "_default": true
+                    "display_name": "Title",
+                    "uid": "title",
+                    "$uid": "title",
+                    "data_type": "text",
+                    "mandatory": true,
+                    "unique": true,
+                    "field_metadata": {
+                        "_default": true
+                    },
+                    "multiple": false
                 },
-                "multiple": false
-            },
-            {
-                "data_type": "file",
-                "display_name": "file",
-                "uid": "file",
-                "field_metadata":
                 {
-                    "rich_text_type": "standard",
-                    "image": true
-                },
-                "multiple": true,
-                "mandatory": true,
-                "unique": false,
-                "non_localizable": false
-            }],
-            "last_activity":
-            {},
+                    "data_type": "file",
+                    "display_name": "file",
+                    "uid": "file",
+                    "$uid": "file",
+                    "field_metadata": {
+                        "rich_text_type": "standard",
+                        "image": true
+                    },
+                    "multiple": true,
+                    "mandatory": true,
+                    "unique": false,
+                    "non_localizable": false
+                }
+            ],
+            "last_activity": {},
             "maintain_revisions": true,
             "description": "",
-            "options":
-            {
+            "options": {
                 "is_page": false,
                 "singleton": false,
                 "title": "title",
@@ -212,13 +202,12 @@
             }
         },
         "uid": "file",
-        "schema":
-        {
+        "schema": {
             "data_type": "file",
             "display_name": "file",
             "uid": "file",
-            "field_metadata":
-            {
+            "$uid": "file",
+            "field_metadata": {
                 "rich_text_type": "standard",
                 "image": true
             },
@@ -229,22 +218,17 @@
         },
         "locale": "en-us"
     },
-    "single":
-    {
+    "single": {
         "self": true,
-        "config":
-        {
+        "config": {
             "sample": "config"
         },
-        "user":
-        {
+        "user": {
             "name": "test"
         },
-        "entry":
-        {
+        "entry": {
             "title": "Test Product",
-            "file":
-            {
+            "file": {
                 "uid": "blt78cdb7bdceb00332",
                 "created_at": "2019-05-27T06:25:46.929Z",
                 "updated_at": "2019-05-27T06:25:46.929Z",
@@ -267,13 +251,11 @@
             "updated_by": "blt63a04454ab1ce3545b41603b",
             "created_at": "2018-02-23T06:04:28.256Z",
             "updated_at": "2018-02-23T06:04:28.256Z",
-            "ACL":
-            {},
+            "ACL": {},
             "_version": 1,
             "publish_details": []
         },
-        "stack":
-        {
+        "stack": {
             "created_at": "2018-06-19T11:06:00.886Z",
             "updated_at": "2018-06-29T12:40:17.115Z",
             "uid": "blt95faa75f2b8bc70a",
@@ -282,18 +264,14 @@
             "api_key": "xxxxxx",
             "owner_uid": "xxxxxxx",
             "enable_presence": true,
-            "settings":
-            {
+            "settings": {
                 "version": "2017-10-14",
                 "webhook_enabled": true
             },
-            "SYS_ACL":
-            {
-                "others":
-                {
+            "SYS_ACL": {
+                "others": {
                     "invite": false,
-                    "sub_acl":
-                    {
+                    "sub_acl": {
                         "create": false,
                         "read": false,
                         "update": false,
@@ -301,59 +279,57 @@
                     }
                 },
                 "roles": [
-                {
-                    "uid": "blt10c23d04939be479",
-                    "invite": true,
-                    "sub_acl":
                     {
-                        "create": true,
-                        "read": true,
-                        "update": true,
-                        "delete": true
+                        "uid": "blt10c23d04939be479",
+                        "invite": true,
+                        "sub_acl": {
+                            "create": true,
+                            "read": true,
+                            "update": true,
+                            "delete": true
+                        }
                     }
-                }]
+                ]
             }
         },
-        "content_type":
-        {
+        "content_type": {
             "created_at": "2018-02-16T11:47:15.297Z",
             "updated_at": "2018-02-16T11:50:49.957Z",
             "title": "Product",
             "uid": "product",
             "inbuilt_class": false,
             "schema": [
-            {
-                "display_name": "Title",
-                "uid": "title",
-                "data_type": "text",
-                "mandatory": true,
-                "unique": true,
-                "field_metadata":
                 {
-                    "_default": true
+                    "display_name": "Title",
+                    "uid": "title",
+                    "$uid": "title",
+                    "data_type": "text",
+                    "mandatory": true,
+                    "unique": true,
+                    "field_metadata": {
+                        "_default": true
+                    },
+                    "multiple": false
                 },
-                "multiple": false
-            },
-            {
-                "data_type": "file",
-                "display_name": "file",
-                "uid": "file",
-                "field_metadata":
                 {
-                    "rich_text_type": "standard",
-                    "image": true
-                },
-                "multiple": false,
-                "mandatory": true,
-                "unique": false,
-                "non_localizable": false
-            }],
-            "last_activity":
-            {},
+                    "data_type": "file",
+                    "display_name": "file",
+                    "uid": "file",
+                    "$uid": "file",
+                    "field_metadata": {
+                        "rich_text_type": "standard",
+                        "image": true
+                    },
+                    "multiple": false,
+                    "mandatory": true,
+                    "unique": false,
+                    "non_localizable": false
+                }
+            ],
+            "last_activity": {},
             "maintain_revisions": true,
             "description": "",
-            "options":
-            {
+            "options": {
                 "is_page": false,
                 "singleton": false,
                 "title": "title",
@@ -361,13 +337,12 @@
             }
         },
         "uid": "file",
-        "schema":
-        {
+        "schema": {
             "data_type": "file",
             "display_name": "file",
             "uid": "file",
-            "field_metadata":
-            {
+            "$uid": "file",
+            "field_metadata": {
                 "rich_text_type": "standard",
                 "image": true
             },
@@ -378,21 +353,16 @@
         },
         "locale": "en-us"
     },
-    "single":
-    {
-        "config":
-        {
+    "single": {
+        "config": {
             "sample": "config"
         },
-        "user":
-        {
+        "user": {
             "name": "test"
         },
-        "entry":
-        {
+        "entry": {
             "title": "Test Product",
-            "file":
-            {
+            "file": {
                 "uid": "blt78cdb7bdceb00332",
                 "created_at": "2019-05-27T06:25:46.929Z",
                 "updated_at": "2019-05-27T06:25:46.929Z",
@@ -415,13 +385,11 @@
             "updated_by": "blt63a04454ab1ce3545b41603b",
             "created_at": "2018-02-23T06:04:28.256Z",
             "updated_at": "2018-02-23T06:04:28.256Z",
-            "ACL":
-            {},
+            "ACL": {},
             "_version": 1,
             "publish_details": []
         },
-        "stack":
-        {
+        "stack": {
             "created_at": "2018-06-19T11:06:00.886Z",
             "updated_at": "2018-06-29T12:40:17.115Z",
             "uid": "blt95faa75f2b8bc70a",
@@ -430,18 +398,14 @@
             "api_key": "xxxxxx",
             "owner_uid": "xxxxxxx",
             "enable_presence": true,
-            "settings":
-            {
+            "settings": {
                 "version": "2017-10-14",
                 "webhook_enabled": true
             },
-            "SYS_ACL":
-            {
-                "others":
-                {
+            "SYS_ACL": {
+                "others": {
                     "invite": false,
-                    "sub_acl":
-                    {
+                    "sub_acl": {
                         "create": false,
                         "read": false,
                         "update": false,
@@ -449,59 +413,57 @@
                     }
                 },
                 "roles": [
-                {
-                    "uid": "blt10c23d04939be479",
-                    "invite": true,
-                    "sub_acl":
                     {
-                        "create": true,
-                        "read": true,
-                        "update": true,
-                        "delete": true
+                        "uid": "blt10c23d04939be479",
+                        "invite": true,
+                        "sub_acl": {
+                            "create": true,
+                            "read": true,
+                            "update": true,
+                            "delete": true
+                        }
                     }
-                }]
+                ]
             }
         },
-        "content_type":
-        {
+        "content_type": {
             "created_at": "2018-02-16T11:47:15.297Z",
             "updated_at": "2018-02-16T11:50:49.957Z",
             "title": "Product",
             "uid": "product",
             "inbuilt_class": false,
             "schema": [
-            {
-                "display_name": "Title",
-                "uid": "title",
-                "data_type": "text",
-                "mandatory": true,
-                "unique": true,
-                "field_metadata":
                 {
-                    "_default": true
+                    "display_name": "Title",
+                    "uid": "title",
+                    "$uid": "title",
+                    "data_type": "text",
+                    "mandatory": true,
+                    "unique": true,
+                    "field_metadata": {
+                        "_default": true
+                    },
+                    "multiple": false
                 },
-                "multiple": false
-            },
-            {
-                "data_type": "file",
-                "display_name": "file",
-                "uid": "file",
-                "field_metadata":
                 {
-                    "rich_text_type": "standard",
-                    "image": true
-                },
-                "multiple": false,
-                "mandatory": true,
-                "unique": false,
-                "non_localizable": false
-            }],
-            "last_activity":
-            {},
+                    "data_type": "file",
+                    "display_name": "file",
+                    "uid": "file",
+                    "$uid": "file",
+                    "field_metadata": {
+                        "rich_text_type": "standard",
+                        "image": true
+                    },
+                    "multiple": false,
+                    "mandatory": true,
+                    "unique": false,
+                    "non_localizable": false
+                }
+            ],
+            "last_activity": {},
             "maintain_revisions": true,
             "description": "",
-            "options":
-            {
+            "options": {
                 "is_page": false,
                 "singleton": false,
                 "title": "title",
@@ -509,13 +471,12 @@
             }
         },
         "uid": "file",
-        "schema":
-        {
+        "schema": {
             "data_type": "file",
             "display_name": "file",
             "uid": "file",
-            "field_metadata":
-            {
+            "$uid": "file",
+            "field_metadata": {
                 "rich_text_type": "standard",
                 "image": true
             },
@@ -525,8 +486,7 @@
             "non_localizable": false
         },
         "locale": "en-us",
-        "value":
-        {
+        "value": {
             "uid": "blt78cdb7bdceb00332",
             "created_at": "2019-05-27T06:25:46.929Z",
             "updated_at": "2019-05-27T06:25:46.929Z",
