@@ -1,28 +1,32 @@
-const path = require('path')
+const path = require('path');
 module.exports = function (config) {
   config.set({
     files: [
-      { pattern: 'lib/*.js', watched: true, served: false, included: false, nocache: false },
-      { pattern: 'test/*Spec.js', watched: true, served: true, included: true }
+      {
+        pattern: 'lib/*.js', watched: true, served: false, included: false, nocache: false
+      },
+      {
+        pattern: 'test/*Spec.js', watched: true, served: true, included: true
+      }
     ],
     autoWatch: true,
-    singleRun: false,  
+    singleRun: false,
     failOnEmptyTestSuite: false,
     plugins: [
-      require("karma-webpack"), 
-      require('karma-jasmine'), 
-      require('karma-coverage-istanbul-reporter'), 
-      require('karma-jasmine-html-reporter'), 
-      require('karma-sourcemap-loader'), 
-      require('karma-chrome-launcher'), 
+      require('karma-webpack'),
+      require('karma-jasmine'),
+      require('karma-coverage-istanbul-reporter'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-sourcemap-loader'),
+      require('karma-chrome-launcher'),
       require('karma-firefox-launcher'),
       require('karma-safari-applescript-launcher'),
       require('karma-summary-reporter')
     ],
-    logLevel: config.LOG_WARN, //config.LOG_DISABLE, config.LOG_ERROR, config.LOG_INFO, config.LOG_DEBUG
+    logLevel: config.LOG_WARN, // config.LOG_DISABLE, config.LOG_ERROR, config.LOG_INFO, config.LOG_DEBUG
     frameworks: ['jasmine'],
-    browsers: ['Chrome','Firefox','Safari' /*,'PhantomJS','Edge','ChromeCanary','Opera','IE'*/ ],
-    reporters: ['kjhtml','coverage-istanbul', 'summary'],
+    browsers: ['Chrome', 'Firefox', 'Safari'],
+    reporters: ['kjhtml', 'coverage-istanbul', 'summary'],
     retryLimit: 0,
     client: {
       captureConsole: false,
@@ -34,18 +38,18 @@ module.exports = function (config) {
       }
     },
     preprocessors: {
-      'test/*Spec.js': ['webpack', "sourcemap"],
-      'lib/*.js': ['webpack', "sourcemap"]
+      'test/*Spec.js': ['webpack', 'sourcemap'],
+      'lib/*.js': ['webpack', 'sourcemap']
     },
     webpackMiddleware: {
       noInfo: true,
       stats: 'errors-only',
-      logLevel : 'error'
+      logLevel: 'error'
     },
     coverageIstanbulReporter: {
       combineBrowserReports: true,
       fixWebpackSourcePaths: true,
-      reports: ['html','text-summary'],
+      reports: ['html', 'text-summary'],
       dir: path.join(__dirname, 'coverage'),
       'report-config': {
         html: {
@@ -54,26 +58,33 @@ module.exports = function (config) {
       }
     },
     summaryReporter: {
-       show: 'failed',
-       specLength: 50,
-       overviewColumn: true
+      show: 'failed',
+      specLength: 50,
+      overviewColumn: true
     },
     webpack: {
-      mode: "development",
+      mode: 'development',
       module: {
         rules: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            options: {
-                presets: ['env']
-            }
-            },{
+          test: /\.js$/,
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }, {
           test: /\.js$/,
           use: {
             loader: 'istanbul-instrumenter-loader',
             options: {
               esModules: true
             }
+          },
+          include: path.resolve('lib/')
+        },
+        {
+          test: /\.css$/,
+          use: {
+            loader: 'css-loader'
           },
           include: path.resolve('lib/')
         }]
