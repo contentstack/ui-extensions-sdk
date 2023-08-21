@@ -22,8 +22,8 @@ Include the compiled version of the extension client library by adding the follo
 
 ```html
 <script
-    src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.2/dist/ui-extension-sdk.js"
-    integrity="sha512-ARbdkPGeszZufhclyJadi58JefJ/fRuVOjAXp1QKwGB5m2XUptmzQKUMeg/gptKQQux6Rba1xX7NrR9mL9eAZQ=="
+    src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.3/dist/ui-extension-sdk.js"
+    integrity="sha512-LMktiFAj7j/AUFctMlgY8qmLrLIQVctwwCsnCXIWnvgF9JlanilvFbZxOCtPNB5eO3vp2Nhw9ED1UsWa+ltSvQ=="
     crossorigin="anonymous"
 ></script>
 ```
@@ -73,7 +73,7 @@ Some of the examples of custom widget extensions are:
 
 -   [**Optimizely Experiments**](https://github.com/contentstack/extensions/tree/master/optimizely-experiments) - Lets you retrieve and display Optimizely Experiments and their details in your entry.
 
-- [**Developer Tools**](https://github.com/contentstack/extensions/tree/master/developer-tools) - This widget extension provides developers with quick tools (API endpoint, JSON, etc.) to work with an entry or all entries of a content type and do a lot more.
+-   [**Developer Tools**](https://github.com/contentstack/extensions/tree/master/developer-tools) - This widget extension provides developers with quick tools (API endpoint, JSON, etc.) to work with an entry or all entries of a content type and do a lot more.
 
 ### Dashboard Widgets
 
@@ -81,10 +81,10 @@ Some of the examples of the dashboard widget extensions are:
 
 -   [**Google Analytics**](https://github.com/contentstack/extensions/tree/master/dashboard-widget-google-analytics) - Displays the traffic analysis and statistics of your site on the stack dashboard.
 
+-   [**Content Type Visualizer**](https://github.com/contentstack/extensions/tree/master/content-type-visualizer) - Content Type Visualizer Dashboard Widget offers a graphical representation of all content types, along with their fields, in a particular stack.
+
 
 [](#using-contentstack-styles)
-
-- [**Content Type Visualizer**](https://github.com/contentstack/extensions/tree/master/content-type-visualizer) - Content Type Visualizer Dashboard Widget offers a graphical representation of all content types, along with their fields, in a particular stack.
 
 ## Using Contentstack styles
 
@@ -97,7 +97,7 @@ Include the CSS file in your extension code as follows:
     rel="stylesheet"
     type="text/css"
     href="https://unpkg.com/@contentstack/ui-extensions-sdk/dist/ui-extension-sdk.css"
-    integrity="sha512-YFrH8bTpkhIRTf8jgGmJDWvd56LA9GnRzirfMr/K78ldxsyrfedaMxMCZMC9A9d0LzuVFhkkHWo10HWEoAgjjg=="
+    integrity="sha512-yPPI/jWiqPr0HIh+1A2QPP5p58sSYqbPoBykxIuBckT1vzGwNbrOmwYM03qGI4ffnxd7q4kkoDys0kdZzxYn9A=="
     crossorigin="anonymous"
 />
 ```
