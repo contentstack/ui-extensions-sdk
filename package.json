@@ -1,6 +1,6 @@
 {
   "name": "@contentstack/ui-extensions-sdk",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "description": "The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields, Custom Widgets, and Dashboard Widgets.",
   "main": "dist/ui-extension-sdk.js",
   "files": [
@@ -13,7 +13,7 @@
     "build": "npx webpack",
     "prepare": "npm run build",
     "generate:sri": "node ./subresourceIntegrity.js",
-    "generate:readme": "npm run generate:sri && npx @appnest/readme generate"
+    "generate:readme": "npm run build && npm run generate:sri && npx @appnest/readme generate"
   },
   "keywords": [
     "contentstack",
@@ -37,6 +37,7 @@
     "babel-loader": "7.1.4",
     "babel-preset-env": "1.7.0",
     "braces": "2.3.2",
+    "css-loader": "^6.8.1",
     "docdash": "1.0.2",
     "eslint": "6.8.0",
     "eslint-config-airbnb": "16.1.0",
@@ -63,6 +64,7 @@
     "karma-spec-reporter": "0.0.32",
     "karma-summary-reporter": "1.5.2",
     "karma-webpack": "^5.0.0",
+    "mini-css-extract-plugin": "^2.7.6",
     "nyc": "14.1.1",
     "ssri": "^9.0.0",
     "webpack": "^5.70.0",
