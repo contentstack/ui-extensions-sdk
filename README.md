@@ -96,7 +96,7 @@ Include the CSS file in your extension code as follows:
 <link
     rel="stylesheet"
     type="text/css"
-    href="https://unpkg.com/@contentstack/ui-extensions-sdk/dist/ui-extension-sdk.css"
+    href="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.3/dist/ui-extension-sdk.css"
     integrity="sha512-yPPI/jWiqPr0HIh+1A2QPP5p58sSYqbPoBykxIuBckT1vzGwNbrOmwYM03qGI4ffnxd7q4kkoDys0kdZzxYn9A=="
     crossorigin="anonymous"
 />
