@@ -73,7 +73,7 @@
     "webpack-shell-plugin-next": "^2.2.2"
   },
   "dependencies": {
-    "post-robot": "8.0.29",
+    "post-robot": "10.0.46",
     "wolfy87-eventemitter": "5.2.4"
   }
 }
