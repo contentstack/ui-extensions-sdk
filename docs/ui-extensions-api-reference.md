@@ -1735,6 +1735,11 @@ stack.ContentType('contenttype_uid').Entry.Query().includeReference(['category',
 ```js
 stack.ContentType('contenttype_uid').Entry.Query().includeReference('category', 'author').find()
 ```
+
+**Example** *( .includeReference referencing to nested field )*  
+```js
+stack.ContentType('contenttype_uid').Entry.Query().includeReference('comment.author').find()
+```
 <a name="Query+includeSchema"></a>
 
 ### query.includeSchema() ⇒ [<code>Query</code>](#Query)
