@@ -1,6 +1,6 @@
 {
   "name": "@contentstack/ui-extensions-sdk",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "The Extensions SDK allows you to extend Contentstack’s UI by helping you create Custom Fields, Custom Widgets, and Dashboard Widgets.",
   "main": "dist/ui-extension-sdk.js",
   "files": [
@@ -71,7 +71,6 @@
   },
   "dependencies": {
     "post-robot": "8.0.29",
-    "taffydb": "^2.7.3",
     "wolfy87-eventemitter": "5.2.4"
   }
 }
