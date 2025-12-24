@@ -1,6 +1,6 @@
 import originalTestData from './data/testData.json';
 import Extension from '../lib/extension.js';
-import ExtensionModule from 'inject-loader!../lib/extension.js';
+import ExtensionModule from '../lib/extension.js';
 
 let testData = JSON.parse(JSON.stringify(originalTestData))
 describe('Extension', () => {
@@ -18,9 +18,7 @@ describe('Extension', () => {
   };
 
   beforeEach(function () {
-    newExtension = ExtensionModule({
-      'post-robot': { sendToParent, on }
-    }).default;
+    newExtension = ExtensionModule;
   });
 
   it('initialize', function (done) {

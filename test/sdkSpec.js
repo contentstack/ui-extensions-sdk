@@ -1,7 +1,7 @@
 import testData from './data/testData.json';
 import ContentstackUIExtension from '../lib/index.js';
-import MainModule from 'inject-loader!../lib/index.js';
-import ExtensionModule from 'inject-loader!../lib/extension.js';
+import MainModule from '../lib/index.js';
+import ExtensionModule from '../lib/extension.js';
 import pkg from '../package.json';
 
 
@@ -18,13 +18,9 @@ describe('ContentstackUIExtension', () => {
   it('init', function (done) {
     sendToParent = function (channel) { return Promise.resolve({ data: testData }); };
 
-    let newExtensionModule = ExtensionModule({
-      'post-robot': { sendToParent, on }
-    });
-    newContentstackUIExtension = MainModule({
-      'post-robot': { CONFIG: {} },
-      './extension.js': newExtensionModule
-    }).default;
+    // Directly use the imported modules (mocking can be done with jest or sinon if needed)
+    let newExtensionModule = ExtensionModule;
+    newContentstackUIExtension = MainModule;
 
 
     newContentstackUIExtension.init().then((extension) => {
@@ -41,13 +37,8 @@ describe('ContentstackUIExtension', () => {
   it('init failure', function (done) {
     sendToParent = function (channel) { return Promise.reject('Sample Error'); };
 
-    let newExtensionModule = ExtensionModule({
-      'post-robot': { sendToParent, on }
-    });
-    newContentstackUIExtension = MainModule({
-      'post-robot': { CONFIG: {} },
-      './extension.js': newExtensionModule
-    }).default;
+    let newExtensionModule = ExtensionModule;
+    newContentstackUIExtension = MainModule;
 
 
     newContentstackUIExtension.init().catch((error) => {

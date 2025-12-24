@@ -1,6 +1,7 @@
 const path = require('path');
 const WebpackShellPlugin = require('webpack-shell-plugin-next');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -16,22 +17,18 @@ module.exports = {
   devtool: 'source-map',
   plugins: [
     new WebpackShellPlugin({ onBuildEnd: ['npm run generate:docs'], dev: false }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new ESLintWebpackPlugin({
+      extensions: ['js'],
+      fix: true
+    })
   ],
   module: {
     rules: [{
-      enforce: 'pre',
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'eslint-loader',
-      options: {
-        fix: true
-      }
-    }, {
       test: /\.js$/,
       loader: 'babel-loader',
       options: {
-        presets: ['env']
+        presets: ['@babel/preset-env']
       }
     },
     {
