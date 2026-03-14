@@ -84,7 +84,7 @@ Include the CSS file in your extension code as follows:
 <link
     rel="stylesheet"
     type="text/css"
-    href="https://unpkg.com/@contentstack/ui-extensions-sdk/dist/ui-extension-sdk.css"
+    href="https://unpkg.com/@contentstack/ui-extensions-sdk@{{pkg.version}}/dist/ui-extension-sdk.css"
     integrity="{{subresourceIntegrity.css}}"
     crossorigin="anonymous"
 />
