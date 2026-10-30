@@ -64,7 +64,7 @@
     "mini-css-extract-plugin": "^2.7.6",
     "nyc": "^17.1.0",
     "ssri": "^9.0.0",
-    "webpack": "^5.70.0",
+    "webpack": "^5.112.2",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^5.2.2",
     "webpack-shell-plugin-next": "^2.2.2"
