@@ -13,6 +13,8 @@ describe('Extension host-only events', () => {
   const listeners = () => window.__postRobot__.requestListeners.extensionEvent;
 
   beforeEach(() => {
+    // other specs build Extension too; post-robot allows one listener per window
+    delete window.__postRobot__.requestListeners.extensionEvent;
     hostFrame = document.createElement('iframe');
     siblingFrame = document.createElement('iframe');
     document.body.appendChild(hostFrame);
