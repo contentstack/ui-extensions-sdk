@@ -1,53 +1,43 @@
 import testData from './data/testData.json';
 import ContentstackUIExtension from '../lib/index.js';
-import MainModule from '../lib/index.js';
-import ExtensionModule from '../lib/extension.js';
+import Extension from '../lib/extension.js';
 import pkg from '../package.json';
+import helpers from './helpers';
 
-
+// karma has no host to answer 'init', so Extension.initialize is stubbed with
+// what the host returns.
 describe('ContentstackUIExtension', () => {
-  let newContentstackUIExtension;
-  let sendToParent;
-  let on = function (event, cbf) {
-    setTimeout(() => {
-      cbf({ data: testData.entry });
-    }, 300);
-  };
-
+  beforeEach(function () {
+    ContentstackUIExtension._extension = undefined;
+    helpers.resetExtensionEventListener();
+  });
 
   it('init', function (done) {
-    sendToParent = function (channel) { return Promise.resolve({ data: testData }); };
+    spyOn(Extension, 'initialize').and.returnValue(Promise.resolve({ data: helpers.clone(testData) }));
 
-    // Directly use the imported modules (mocking can be done with jest or sinon if needed)
-    let newExtensionModule = ExtensionModule;
-    newContentstackUIExtension = MainModule;
-
-
-    newContentstackUIExtension.init().then((extension) => {
+    ContentstackUIExtension.init().then((extension) => {
+      expect(Extension.initialize).toHaveBeenCalledWith(pkg.version);
       expect(extension.config).toEqual(testData.config);
       expect(extension.currentUser).toEqual(testData.user);
       expect(extension.type).toEqual('FIELD');
-      newContentstackUIExtension.init().then((newExtesnion) => { // must return same extension object once initialized
-        expect(extension).toEqual(newExtesnion);
+      ContentstackUIExtension.init().then((newExtension) => { // must return same extension object once initialized
+        expect(newExtension).toBe(extension);
+        expect(Extension.initialize.calls.count()).toEqual(1);
         done();
       });
     });
   });
 
   it('init failure', function (done) {
-    sendToParent = function (channel) { return Promise.reject('Sample Error'); };
+    spyOn(Extension, 'initialize').and.returnValue(Promise.reject('Sample Error'));
 
-    let newExtensionModule = ExtensionModule;
-    newContentstackUIExtension = MainModule;
-
-
-    newContentstackUIExtension.init().catch((error) => {
+    ContentstackUIExtension.init().catch((error) => {
       expect(error).toEqual('Sample Error');
       done();
     });
   });
 
   it('SDK_VERSION', function () {
-    expect(newContentstackUIExtension.SDK_VERSION).toEqual(pkg.version);
+    expect(ContentstackUIExtension.SDK_VERSION).toEqual(pkg.version);
   });
 });

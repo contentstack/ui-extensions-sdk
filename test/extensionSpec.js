@@ -1,51 +1,46 @@
 import originalTestData from './data/testData.json';
 import Extension from '../lib/extension.js';
-import ExtensionModule from '../lib/extension.js';
+import helpers from './helpers';
 
-let testData = JSON.parse(JSON.stringify(originalTestData))
+// Extension.initialize posts 'init' to the host and karma has no host to answer,
+// so these specs build Extension from init data, as the host would return it.
 describe('Extension', () => {
-  let newExtension;
-  let sendToParent = function (channel) { return Promise.resolve({ data: testData }); };
-  let on = function (event, cbf) {
-    setTimeout(() => {
-      cbf({ data: { data: testData.entry, name: 'entrySave' } });
-      cbf({ data: { data: {}, name: 'entryPublish' } });
-      cbf({ data: { data: {}, name: 'entryUnPublish' } });
-      cbf({ data: { data: testData.entry, name: 'entryChange' } });
-      cbf({ data: { state: 'full_width', name: 'dashboardResize' } });
-      cbf({ data: { data: 'sample', name: 'extensionFieldChange' } });
-    }, 300);
-  };
+  let testData;
 
   beforeEach(function () {
-    newExtension = ExtensionModule;
+    testData = helpers.clone(originalTestData);
+    helpers.resetExtensionEventListener();
   });
 
-  it('initialize', function (done) {
-    newExtension.initialize().then((data) => {
-      let extension = new newExtension(data);
-      expect(extension.config).toEqual(testData.config);
-      expect(extension.currentUser).toEqual(testData.user);
-      expect(extension.type).toEqual('FIELD');
+  it('initialize', function () {
+    let extension = new Extension({ data: testData });
+    expect(extension.config).toEqual(testData.config);
+    expect(extension.currentUser).toEqual(testData.user);
+    expect(extension.type).toEqual('FIELD');
+    expect(extension.field).toBeDefined();
+    expect(extension.entry).toBeDefined();
+    expect(extension.window).toBeDefined();
 
-      testData.type = 'SIDEBAR';
-      extension = new newExtension(data);
-      expect(extension.type).toEqual(testData.type);
-      expect(extension.window).toBeUndefined();
-      expect(extension.field).toBeUndefined();
+    helpers.resetExtensionEventListener();
+    testData.type = 'SIDEBAR';
+    extension = new Extension({ data: testData });
+    expect(extension.type).toEqual(testData.type);
+    expect(extension.window).toBeUndefined();
+    expect(extension.field).toBeUndefined();
 
-      testData.type = 'DASHBOARD';
-      extension = new newExtension(data);
-      expect(extension.type).toEqual(testData.type);
-      expect(extension.entry).toBeUndefined();
-      expect(extension.field).toBeUndefined();
-      done();
-    });
+    helpers.resetExtensionEventListener();
+    testData.type = 'DASHBOARD';
+    extension = new Extension({ data: testData });
+    expect(extension.type).toEqual(testData.type);
+    expect(extension.entry).toBeUndefined();
+    expect(extension.field).toBeUndefined();
   });
 
   it('setReady', function (done) {
-    let extension = new newExtension({ data: testData });
+    let extension = new Extension({ data: testData });
+    extension.postRobot = { sendToParent: jasmine.createSpy('sendToParent').and.returnValue(Promise.resolve()) };
     extension.setReady().then(() => {
+      expect(extension.postRobot.sendToParent).toHaveBeenCalledWith('ready');
       done();
     });
   });

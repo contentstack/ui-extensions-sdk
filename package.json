@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js",
+    "test:coverage": "karma start --single-run --browsers ChromeHeadless --reporters summary,coverage karma.conf.js",
     "test-local": "karma start --single-run",
     "generate:docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
     "build": "npx webpack",

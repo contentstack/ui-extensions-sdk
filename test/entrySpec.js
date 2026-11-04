@@ -124,22 +124,19 @@ describe('Entry', function () {
     }
   });
 
-  it('getField Invalid Uid Multiple', function () {
+  // 'group.group.group.0' is a valid path (the inner group is multiple), so it
+  // returns that instance; the old spec named it invalid and asserted nothing.
+  it('getField multiple group instance', function () {
     let uid = 'group.group.group.0';
-    try {
-      entry.getField(uid);
-    } catch (e) {
-      expect(e.message).toEqual('Invalid uid, Field not found');
-    }
+    let field = entry.getField(uid);
+    expect(field.uid).toEqual(uid);
+    expect(field.getData()).toEqual(testData.entry.group.group.group[0]);
   });
 
 
   it('getField Invalid Uid', function () {
-    try {
-      entry.getField('invaliduid');
-    } catch (e) {
-      expect(e.message).toEqual('Invalid uid, Field not found');
-    }
+    // Current (undocumented) message prefix, as 2.2.3 throws it; b6d18c5 appends the cause.
+    expect(() => entry.getField('invaliduid')).toThrowError(/^Invalid uid, Field not found/);
   });
 
   it('onSave Callback must be a function', function () {
