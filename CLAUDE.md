@@ -1,17 +1,6 @@
 # ui-extensions-sdk
 
-`@contentstack/ui-extensions-sdk`: the legacy (pre-Marketplace) UI extensions SDK. Existing custom fields, custom widgets and dashboard widgets in customers' stacks load it from npm/unpkg (`dist/ui-extension-sdk.js`, UMD global `ContentstackUIExtension`). It does the `init` handshake with the Contentstack host (UI-React) over post-robot and exposes `extension.field`, `entry`, `window`, `stack` and `store`. New work belongs in `@contentstack/app-sdk`; this repo gets bug and security fixes.
-
-## Developer Ecosystem workflow (read first)
-
-This repo belongs to a Developer Ecosystem pod (DevEx: MCP, CLI, SDK, Starters including the SAP connector; Marketplace; Mkt Apps; Developer Hub).
-New features and changes go through the deveco workflow before any code is written here:
-
-1. Find the work's DSCDX idea and where it is in the flow. No idea yet: write one with the `brief` skill in `contentstack/product-wiki`.
-2. The PRD, TRD, test cases, tickets and code come from your own routines (PM, Architect, QA agent, Dev), gate by gate. Do not plan, draft or build them in this session. No routine for a step yet: set it up with the `deveco-aisdlc-onboarding` skill in `contentstack/agent-skills`.
-3. The order, gates and intake: https://github.com/contentstack/agent-skills/blob/main/skills/deveco-aisdlc-onboarding/references/run-protocol.md
-
-Bug fixes and support cases keep this repo's usual path. Not sure which applies? Ask before building.
+`@contentstack/ui-extensions-sdk`: the legacy (pre-Marketplace) UI extensions SDK. Existing custom fields, custom widgets and dashboard widgets in customers' stacks load it from npm/unpkg (`dist/ui-extension-sdk.js`, UMD global `ContentstackUIExtension`). It does the `init` handshake with the Contentstack web app (the host) over post-robot and exposes `extension.field`, `entry`, `window`, `stack` and `store`. New work belongs in `@contentstack/app-sdk`; this repo gets bug and security fixes.
 
 **Stack:** JavaScript (ES modules, Babel) · webpack 5 (UMD bundle + CSS in `dist/`) · Karma + Jasmine in headless Chrome · post-robot 8.0.29 · wolfy87-eventemitter · npm
 **Commands:** `npm ci --legacy-peer-deps` (plain `npm ci` fails ERESOLVE: the airbnb ESLint config peers eslint 8, the repo is on 9; `prepare` builds) · `npm run build` (also lints with `--fix` and regenerates `jsdocs/`) · `npm test` · `npm run generate:docs` · `npm run generate:sri` (SRI hashes for the README)
@@ -20,7 +9,7 @@ Bug fixes and support cases keep this repo's usual path. Not sure which applies?
 ## Public API contract (hard rules)
 - This package is public and runs inside customers' existing extensions. No breaking change: the `ContentstackUIExtension` global, exported classes, method names and signatures, the `init`/`ready` handshake, post-robot channel names (`init`, `ready`, `extensionEvent`, `stack`, ...) and payload shapes stay as they are.
 - Change runtime behaviour only for a confirmed bug fix, and say in the PR exactly what consumers will see differ. Every other PR says it changes nothing for consumers.
-- Host-to-extension listeners (`postRobot.on`) must accept messages from `window.parent` only (`{ window: window.parent }`); see MKT-22139.
+- Host-to-extension listeners (`postRobot.on`) must accept messages from `window.parent` only (`{ window: window.parent }`); see contentstack/ui-extensions-sdk#65.
 - No `console.log` of entry, field or user data; never log tokens, headers or bodies.
 - Error messages are part of the contract (extensions may match them): keep the current text as the prefix.
 - A version bump, release or `npm publish` is the release process's job (GitHub release -> `.github/workflows/npm-publish.yml`, which runs `npm test` first), never part of a feature or fix PR.
