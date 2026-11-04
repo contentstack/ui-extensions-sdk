@@ -38,4 +38,40 @@ describe('Extension host-only events', () => {
     expect(listeners().get(siblingFrame.contentWindow)).toBeUndefined();
     expect(listeners().get(window.__postRobot__.WINDOW_WILDCARD)).toBeUndefined();
   });
+
+  // Behaviour: a request-shaped message, as post-robot's own 'message' listener
+  // receives it, from the host is handled; the same message from a sibling is dropped.
+  let messageId = 0;
+  const deliver = (source, payload) => {
+    messageId += 1;
+    window.dispatchEvent(new MessageEvent('message', {
+      source,
+      origin: window.location.origin,
+      data: JSON.stringify({
+        __postRobot__: {
+          type: 'postrobot_message_request',
+          id: `host-only-spec-${messageId}`,
+          hash: `host-only-spec-${messageId}`,
+          name: 'extensionEvent',
+          sourceDomain: window.location.origin,
+          fireAndForget: true,
+          data: payload
+        }
+      })
+    }));
+  };
+
+  it('runs onSave for an entrySave from the host and ignores one from a sibling frame', (done) => {
+    const extension = new Extension({ data: JSON.parse(JSON.stringify(testData)) });
+    const saved = [];
+    extension.entry.onSave((data) => saved.push(data));
+
+    deliver(siblingFrame.contentWindow, { name: 'entrySave', data: { from: 'sibling' } });
+    deliver(hostFrame.contentWindow, { name: 'entrySave', data: { from: 'host' } });
+
+    setTimeout(() => {
+      expect(saved).toEqual([{ from: 'host' }]);
+      done();
+    }, 100);
+  });
 });
