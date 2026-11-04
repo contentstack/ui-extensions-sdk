@@ -135,7 +135,7 @@ describe('Entry', function () {
 
 
   it('getField Invalid Uid', function () {
-    // Documented message prefix; b6d18c5 appends the cause after it.
+    // Current (undocumented) message prefix, as 2.2.3 throws it; b6d18c5 appends the cause.
     expect(() => entry.getField('invaliduid')).toThrowError(/^Invalid uid, Field not found/);
   });
 
