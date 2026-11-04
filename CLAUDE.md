@@ -22,7 +22,7 @@ Bug fixes and support cases keep this repo's usual path. Not sure which applies?
 - Change runtime behaviour only for a confirmed bug fix, and say in the PR exactly what consumers will see differ. Every other PR says it changes nothing for consumers.
 - Host-to-extension listeners (`postRobot.on`) must accept messages from `window.parent` only (`{ window: window.parent }`); see MKT-22139.
 - No `console.log` of entry, field or user data; never log tokens, headers or bodies.
-- Error messages are part of the contract (extensions may match them): keep the documented text as the prefix.
+- Error messages are part of the contract (extensions may match them): keep the current text as the prefix.
 - A version bump, release or `npm publish` is the release process's job (GitHub release -> `.github/workflows/npm-publish.yml`, which runs `npm test` first), never part of a feature or fix PR.
 
 ## Layout
