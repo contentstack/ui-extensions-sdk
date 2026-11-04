@@ -48,6 +48,13 @@ describe('Entry', function () {
     expect(field.schema).toEqual(schema);
   });
 
+  it('getField does not log entry data to the console', function () {
+    spyOn(console, 'log');
+    entry.getField('group1.group');
+    entry.getField('modular_blocks.0');
+    expect(console.log).not.toHaveBeenCalled();
+  });
+
   it('getField modular blocks, get complete block', function () {
     let uid = 'modular_blocks.0';
     let schema = entry.content_type.schema[6].blocks[2];
