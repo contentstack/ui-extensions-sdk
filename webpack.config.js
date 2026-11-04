@@ -20,7 +20,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new ESLintWebpackPlugin({
       extensions: ['js'],
-      fix: true
+      fix: !process.env.CI // CI reports lint problems instead of rewriting sources
     })
   ],
   module: {

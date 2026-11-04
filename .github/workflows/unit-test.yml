@@ -1,0 +1,23 @@
+name: Unit tests
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      # --legacy-peer-deps: eslint-config-airbnb-base peers eslint 8; the repo is on eslint 9
+      - run: npm ci --legacy-peer-deps
+      - run: npm run build
+      - run: npm run test:coverage
