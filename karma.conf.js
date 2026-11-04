@@ -48,7 +48,8 @@ module.exports = function (config) {
     },
     coverageReporter: {
       dir: path.join(__dirname, 'coverage'),
-      reporters: [{ type: 'html', subdir: 'html' }, { type: 'text-summary' }]
+      reporters: [{ type: 'html', subdir: 'html' }, { type: 'text-summary' }],
+      check: { global: { statements: 90, branches: 90, functions: 90, lines: 90 } }
     },
     summaryReporter: {
       show: 'failed',
