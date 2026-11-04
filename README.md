@@ -22,8 +22,8 @@ Include the compiled version of the extension client library by adding the follo
 
 ```html
 <script
-    src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.3/dist/ui-extension-sdk.js"
-    integrity="sha512-LMktiFAj7j/AUFctMlgY8qmLrLIQVctwwCsnCXIWnvgF9JlanilvFbZxOCtPNB5eO3vp2Nhw9ED1UsWa+ltSvQ=="
+    src="https://unpkg.com/@contentstack/ui-extensions-sdk@2.2.5/dist/ui-extension-sdk.js"
+    integrity="sha512-in0mMjQmxKUrHCmC1+9I7IzBQMTA3FVUI+/txGpGSFdgy65iYuQR9eGFSJ4H/qgR1Qd40NOLsaE/bTGDLAQP7A=="
     crossorigin="anonymous"
 ></script>
 ```
