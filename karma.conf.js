@@ -26,7 +26,7 @@ module.exports = function (config) {
     logLevel: config.LOG_WARN, // config.LOG_DISABLE, config.LOG_ERROR, config.LOG_INFO, config.LOG_DEBUG
     frameworks: ['jasmine'],
     browsers: ['Chrome', 'Firefox', 'Safari'],
-    reporters: ['kjhtml', 'coverage', 'summary'],
+    reporters: ['kjhtml', 'summary'],
     retryLimit: 0,
     client: {
       captureConsole: false,
@@ -46,16 +46,9 @@ module.exports = function (config) {
       stats: 'errors-only',
       logLevel: 'error'
     },
-    coverageIstanbulReporter: {
-      combineBrowserReports: true,
-      fixWebpackSourcePaths: true,
-      reports: ['html', 'text-summary'],
+    coverageReporter: {
       dir: path.join(__dirname, 'coverage'),
-      'report-config': {
-        html: {
-          subdir: 'html'
-        }
-      }
+      reporters: [{ type: 'html', subdir: 'html' }, { type: 'text-summary' }]
     },
     summaryReporter: {
       show: 'failed',
@@ -70,10 +63,11 @@ module.exports = function (config) {
             test: /\.js$/,
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/preset-env']
+              presets: ['@babel/preset-env'],
+              // instruments lib/ for the coverage reporter (npm run test:coverage)
+              plugins: [['istanbul', { include: ['lib/**'] }]]
             }
           },
-          // istanbul-instrumenter-loader removed; use babel-plugin-istanbul for coverage
           {
             test: /\.css$/,
             use: {
