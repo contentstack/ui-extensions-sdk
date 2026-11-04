@@ -41,7 +41,7 @@ The ruleset "Default branch protection rules for releases branch" covers `master
 - Changes land by pull request only; no force push, no branch deletion.
 - 1 approving review, including a code owner (`CODEOWNERS`: `@contentstack/developer-ecosystem-pr-reviewers`; workflows, `.snyk`, `CODEOWNERS` and `.gitguardian.yaml` need `@contentstack/security-admin`).
 - The last push needs approval from someone other than its pusher; new pushes dismiss stale approvals; all review threads must be resolved.
-- Required checks: `GitGuardian Security Checks`, `security-sca`, `security-license`, `security-policy`, `security/snyk`, `code/snyk`, `license/snyk` (contentstack-developer-ecosystem). Tests are not a required check: run `npm test` yourself.
+- Required checks: `GitGuardian Security Checks`, `security-sca`, `security-license`, `security-policy`, `security/snyk`, `code/snyk`, `license/snyk` (contentstack-developer-ecosystem). Tests are not a required check: run `npm test` yourself. Until #69 merges no workflow runs them on pull requests; after it, read the `Unit tests` run on the PR.
 - Merge, squash or rebase are all allowed. Release tags are protected by a separate ruleset.
 
 ## Definition of Done
