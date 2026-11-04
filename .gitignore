@@ -4,3 +4,5 @@ out/*
 .DS_Store
 .vscode
 dist/*
+.env
+.env.*
